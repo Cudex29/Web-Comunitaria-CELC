@@ -1,0 +1,214 @@
+<!-- Lo hice usando IA, y el IBM CARBON DESIGN SYSTEM, por que soy masoquista y me gusta su diseño, pero debemos de fabricar el nuestro.-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>ComunidadCUGDL</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <link rel="icon" type="image/png" sizes="32x32" href="./imagenes/pinguino.png">
+  <!-- Carbon Design System CSS ORIGINAL, Todos los style de abajo modifican los valores del documento, lo que no se especifique mas abajo, quedara por default -->
+   <!-- Tal y como el siguiente documento-->
+  <link rel="stylesheet" href="https://unpkg.com/carbon-components/css/carbon-components.min.css" />
+
+  <!-- Google Fonts para mejorar la tipografía, No hacen nada de momento.-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <!-- Ahora si, en esta parte le añadimos nuestro sabor al CSS-->
+  <style>
+    body {
+      display: flex;
+      min-height: 100vh;
+    }
+      .bx--accordion__heading {
+      width: 100%;
+      text-align: center;
+      cursor: pointer;
+      color: #fff;
+    }
+    .sidebar {
+      width: 280px;
+      background-color: #161616;
+      color: #fff;
+    }
+
+    .sidebar h2 {
+      padding: 1rem;
+      font-size: 1.1rem;
+      border-bottom: 1px solid #393939;
+    }
+
+    .content {
+      flex: 1;
+      padding: 2rem;
+      background-color: #f4f4f4;
+    }
+
+    .section {
+      display: none;
+    }
+
+    .section.active {
+      display: block;
+    }
+
+    .resource-card {
+      margin-bottom: 1rem;
+    }
+    
+    .fondo-header {
+    min-height: 300px;
+    background-image: url('./imagenes/fondo.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+  </style>
+</head>
+<body class="bx--body">
+
+  <!-- Sidebar, No es lo mejor del mundo pero funciona.-->
+  <aside class="sidebar">
+    <h2>Menú de recursos</h2>
+    <div class="bx--accordion">
+
+      <button class="bx--accordion__item" onclick="showSection('bienvenida')">Bienvenida</button>
+
+      <div class="bx--accordion__item">
+        <button class="bx--accordion__heading" onclick="toggleAccordion(this)">
+          <span class="bx--accordion__title">Primer Semestre</span>
+        </button>
+        <div class="bx--accordion__content">
+          <button class="bx--btn bx--btn--ghost" onclick="showSection('sem1')">Ver sección</button>
+        </div>
+      </div>
+
+      <div class="bx--accordion__item">
+        <button class="bx--accordion__heading" onclick="toggleAccordion(this)">
+          <span class="bx--accordion__title">Segundo Semestre</span>
+        </button>
+        <div class="bx--accordion__content">
+          <button class="bx--btn bx--btn--ghost" onclick="showSection('sem2')">Ver sección</button>
+        </div>
+      </div>
+
+      <div class="bx--accordion__item">
+        <button class="bx--accordion__heading" onclick="toggleAccordion(this)">
+          <span class="bx--accordion__title">Tercer Semestre</span>
+        </button>
+        <div class="bx--accordion__content">
+          <button class="bx--btn bx--btn--ghost" onclick="showSection('sem3')">Ver sección</button>
+        </div>
+      </div>
+
+      <div class="bx--accordion__item">
+        <button class="bx--accordion__heading" onclick="toggleAccordion(this)">
+          <span class="bx--accordion__title">Cuarto Semestre</span>
+        </button>
+        <div class="bx--accordion__content">
+          <button class="bx--btn bx--btn--ghost" onclick="showSection('sem4')">Ver sección</button>
+        </div>
+      </div>
+
+      <div class="bx--accordion__item">
+        <button class="bx--accordion__heading" onclick="toggleAccordion(this)">
+          <span class="bx--accordion__title">Quinto Semestre</span>
+        </button>
+        <div class="bx--accordion__content">
+          <button class="bx--btn bx--btn--ghost" onclick="showSection('sem5')">Ver sección</button>
+        </div>
+      </div>
+
+      <div class="bx--accordion__item">
+        <button class="bx--accordion__heading" onclick="toggleAccordion(this)">
+          <span class="bx--accordion__title">Sexto Semestre</span>
+        </button>
+        <div class="bx--accordion__content">
+          <button class="bx--btn bx--btn--ghost" onclick="showSection('sem6')">Ver sección</button>
+        </div>
+      </div>
+
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+
+    <!-- Bienvenida -->
+    <section id="bienvenida" class="section active">
+
+      <!-- FONDO-->
+      <div class="fondo-header">
+
+    <img src="./imagenes/udg-escudo.png" alt="" class="logo-udg">
+  </div>
+      <!-- TEXTO DE BIENVENIDA-->
+      <h1 class="bx--type-expressive-heading-03">Bienvenido al proyecto web comunitario</h1>
+      <p class="bx--type-body-long-01">
+        Este sitio está diseñado por y para alumnos de CUGDL. para centralizar recursos educativos por semestre.
+        Aquí encontrarás videos, documentos PDF y artículos web de apoyo. Esta es la beta, añadiremos bugs para solucuonarlos despues.
+        
+      </p>
+    </section>
+
+    <!-- Semestre Template -->
+    <section id="sem1" class="section">
+      <h2>Primer Semestre</h2>
+      <div class="bx--grid">
+        <div class="bx--row">
+          <div class="bx--col">
+            <h4>📹 Videos</h4>
+            <div class="bx--tile resource-card">Video introductorio</div>
+          </div>
+          <div class="bx--col">
+            <h4>📄 PDFs</h4>
+            <div class="bx--tile resource-card">Guía básica</div>
+          </div>
+          <div class="bx--col">
+            <h4>🌐 Artículos Web</h4>
+            <div class="bx--tile resource-card">Artículo recomendado</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+      <section id="sem2" class="section">
+      <h2>Segundo Semestre</h2>
+      <div class="bx--grid">
+        <div class="bx--row">
+          <div class="bx--col">
+            <h4>📹 Videos</h4>
+            <div class="bx--tile resource-card">Video introductorio</div>
+          </div>
+          <div class="bx--col">
+            <h4>📄 PDFs</h4>
+            <div class="bx--tile resource-card">Guía básica</div>
+          </div>
+          <div class="bx--col">
+            <h4>🌐 Artículos Web</h4>
+            <div class="bx--tile resource-card">Artículo recomendado</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="sem3" class="section"><h2>Tercer Semestre</h2><p>Mismos apartados: Videos, PDF y Artículos.</p></section>
+    <section id="sem4" class="section"><h2>Cuarto Semestre</h2><p>Mismos apartados: Videos, PDF y Artículos.</p></section>
+    <section id="sem5" class="section"><h2>Quinto Semestre</h2><p>Mismos apartados: Videos, PDF y Artículos.</p></section>
+    <section id="sem6" class="section"><h2>Sexto Semestre</h2><p>Mismos apartados: Videos, PDF y Artículos.</p></section>
+
+  </main>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/carbon-components/scripts/carbon-components.min.js"></script>
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+
+    function toggleAccordion(btn) {
+      btn.parentElement.classList.toggle('bx--accordion__item--active');
+    }
+  </script>
+</body>
+</html>

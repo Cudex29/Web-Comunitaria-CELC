@@ -520,6 +520,12 @@
       document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
       document.getElementById(id).classList.add('active');
     }
+    const footer = document.getElementById('main-footer');
+    if (id === 'bienvenida') {
+      footer.style.display = 'none';
+    } else {
+      footer.style.display = 'block';
+    }
 
     function toggleAccordion(btn) {
       btn.parentElement.classList.toggle('bx--accordion__item--active');

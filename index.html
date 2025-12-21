@@ -70,7 +70,27 @@
     justify-content: center;
     text-align: center;
 }
+/* Cambio de estilo del destello del sidebar*/
+/* Hover */
+.sidebar .bx--accordion__heading:hover::before {
+  background-color: #6c36ff !important;
+}
 
+/* Focus (teclado) */
+.sidebar .bx--accordion__heading:focus::before {
+  background-color: #6c36ffb0 !important;
+}
+
+/* Active (accordion abierto) */
+.sidebar .bx--accordion__item--active > 
+.bx--accordion__heading::before {
+  background-color: #6c36ff41 !important;
+}
+
+/* Transición suave */
+.sidebar .bx--accordion__heading::before {
+  transition: background-color 0.15s ease;
+}
 .bx--body {
   font-size: .875rem;
   font-weight: 400;

@@ -342,8 +342,7 @@
 
         <!-- Pruebas Con Ventana Modal-->
 
-<button class="bx--btn bx--btn--primary" type="button" data-modal-target="#modal-l6dgz3717cj">Show
-  modal</button>
+<button class="bx--btn bx--btn--primary" type="button" data-modal-target="#modal-l6dgz3717cj">Ver ventana</button>
 
 <div data-modal id="modal-l6dgz3717cj" class="bx--modal " role="dialog"
   aria-modal="true" aria-labelledby="modal-l6dgz3717cj-label" aria-describedby="modal-l6dgz3717cj-heading" tabindex="-1">
@@ -359,11 +358,7 @@
     <!-- Note: Modals with content that scrolls, at any viewport, requires `tabindex="0"` on the `bx--modal-content` element -->
 
     <div class="bx--modal-content" tabindex="0">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean id accumsan augue. Phasellus consequat augue
-        vitae
-        tellus tincidunt posuere. Curabitur justo urna, consectetur vel elit iaculis, ultrices condimentum risus. Nulla
-        facilisi.
-        Etiam venenatis molestie tellus. Quisque consectetur non risus eu rutrum. </p>
+      <bold>Esta ventana puede servir para los contenidos, por eso esta aqui </bold>
 
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean id accumsan augue. Phasellus consequat augue
         vitae
@@ -521,6 +516,7 @@
       document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
       document.getElementById(id).classList.add('active');
     }
+    // El script es para ocultar el footer en la seccion de bienvenida, pero no funciona. De igual manera el footer se ve bien. Dejemoslo asi.
     const footer = document.getElementById('main-footer');
     if (id === 'bienvenida') {
       footer.style.display = 'none';

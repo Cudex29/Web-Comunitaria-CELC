@@ -180,6 +180,51 @@
   color: #8d8d8d;
 }
 
+/* Botón Bienvenida */
+.welcome-btn {
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  font-size: 0.875rem;
+  text-align: left;
+  transition: background-color 0.15s ease;
+}
+
+/* Hover */
+.welcome-btn:hover {
+  background-color: #262626;
+}
+
+/* Focus accesible */
+.welcome-btn:focus {
+  outline: 2px solid #0f62fe;
+  outline-offset: -2px;
+}
+
+/* Icono PNG */
+.welcome-icon {
+  width: 16px;      /* tamaño Carbon estándar */
+  height: 16px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+/* Texto del boton */
+.welcome-text {
+  flex: 1;
+  white-space: nowrap;
+}
+.welcome-icon {
+  filter: brightness(0) invert(1);
+}
+/* Final del boton de bienvenida*/
+
 /* Final de estilo para el Footer*/
   </style>
 </head>
@@ -190,7 +235,16 @@
     <h2>Menú de recursos</h2>
     <div class="bx--accordion">
 
-      <button class="bx--accordion__item" onclick="showSection('bienvenida')">Bienvenida</button>
+      <button class="welcome-btn" onclick="showSection('bienvenida')">
+  <img
+    src="./imagenes/home.svg"
+    alt=""
+    class="welcome-icon"
+    aria-hidden="true"
+  />
+  <span class="welcome-text">Bienvenida</span>
+</button>
+
 
       <div class="bx--accordion__item">
         <button class="bx--accordion__heading" onclick="toggleAccordion(this)">

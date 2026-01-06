@@ -14,6 +14,8 @@
   <link rel="stylesheet" href="https://unpkg.com/carbon-components/css/carbon-components.min.css" /> 
 
   <!-- Google Fonts para mejorar la tipografía, No hacen nada de momento.-->
+   <!-- Puesto que todo eso viene en  las propiedades del CSS de Carbon -->
+       <!-- El IBM CARBON DESIGN SYSTEM es un framework de diseño. muy completo para las webs Me ahorro mucho tiempo -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
  <!-- Ahora si, en esta parte le añadimos nuestro sabor al CSS-->
@@ -229,6 +231,131 @@
   font-weight: 700 
   
 }
+/* ESTILO HEADER MATERIASS*/
+/* HEADER DE SEMESTRE */
+.semester-header {
+  padding: 2rem 0 1.5rem;
+  border-bottom: 1px solid #393939;
+  margin-bottom: 2rem;
+}
+
+/* Subtítulo */
+.semester-subtitle {
+  color: #c6c6c6;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Breadcrumb spacing */
+.bx--breadcrumb {
+  margin-bottom: 1rem;
+}
+
+/* Tabs separación */
+.bx--tabs {
+  margin-top: 1rem;
+}
+.materia {
+  display: none;
+}
+
+.materia.active {
+  display: block;
+}
+/* ESTILOS BOTONES DEL HEADER*/
+/* ================================
+/* Botón base */
+.bx--tabs__nav-link {
+  background: none;
+  border: none;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #c0c0c0; 
+  cursor: pointer;
+  position: relative;
+  transition: color 0.15s ease;
+}
+
+@media (min-width: 42rem) {
+  .bx--tabs__nav-item--selected:not(.bx--tabs__nav-item--disabled) .bx--tabs__nav-link, .bx--tabs__nav-item--selected:not(.bx--tabs__nav-item--disabled) .bx--tabs__nav-link:focus, .bx--tabs__nav-item--selected:not(.bx--tabs__nav-item--disabled) .bx--tabs__nav-link:active {
+    font-size: .875rem;
+    font-weight: 600;
+    line-height: 1.28572;
+    letter-spacing: .16px;
+    border-bottom: 2px solid #6c36ff;
+    color: #fff;
+  }
+}
+/* Hover */
+.bx--tabs__nav-link:hover {
+  color: #6c36ff;
+}
+
+/* Focus accesible */
+.bx--tabs__nav-link:focus {
+  outline: none;
+  color: #ff0000;
+}
+
+/* Quitar estilos raros por defecto */
+.bx--tabs__nav-link::before {
+  display: none;
+}
+
+/* ================================
+   TAB ACTIVA
+   ================================ */
+
+.bx--tabs__nav-item--selected
+.bx--tabs__nav-link {
+  color: #6c36ff;
+  font-weight: 600;
+}
+
+/* Subrayado activo */
+.bx--tabs__nav-item--selected
+.bx--tabs__nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 3px;
+  background-color: #6c36ff;
+}
+
+/* ================================
+   CONTENEDOR DE TABS
+   ================================ */
+
+.bx--tabs__nav {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* Quitar borde azul Carbon */
+.bx--tabs--contained .bx--tabs__nav {
+  border-bottom: 1px solid #ffffff;
+}
+/* ================================
+   OVERRIDE DEFINITIVO HOVER TABS (CARBON)
+   ================================ */
+
+@media (min-width: 42rem) {
+
+  /* Hover normal */
+  .bx--tabs__nav-item:not(.bx--tabs__nav-item--disabled)
+  .bx--tabs__nav-link:hover {
+    color: #ffffff !important;
+  }
+
+  /* Hover sobre tab ACTIVA */
+  .bx--tabs__nav-item--selected:not(.bx--tabs__nav-item--disabled)
+  .bx--tabs__nav-link:hover {
+    color: #ffffff !important;
+  }
+}
+
   </style>
 </head>
 <body class="bx--body">
@@ -331,45 +458,505 @@
 
     <!-- Semestre Template -->
     <section id="sem1" class="section">
-      <h2>Primer Semestre</h2>
-      <div class="bx--grid">
-        <div class="bx--row">
-          <div class="bx--col">
-            <h4>📹 Videos</h4>
-            <div class="bx--tile resource-card">Video introductorio</div>
-          </div>
-          <div class="bx--col">
-            <h4>📄 PDFs</h4>
-            <div class="bx--tile resource-card">Guía básica</div>
-          </div>
-          <div class="bx--col">
-            <h4>🌐 Artículos Web</h4>
-            <div class="bx--tile resource-card">Artículo recomendado</div>
-          </div>
-        </div>
-      </div>
-    </section>
+<!-- HEADER CARBON DEL SEMESTRE -->
+<div class="semester-header">
+
+  <!-- Breadcrumb -->
+  <nav class="bx--breadcrumb bx--breadcrumb--no-trailing-slash">
+    <div class="bx--breadcrumb-item">
+      <a href="#" onclick="showSection('bienvenida')">Inicio</a>
+    </div>
+    <div class="bx--breadcrumb-item">
+      <span>Primer Semestre</span>
+    </div>
+  </nav>
+
+  <!-- Título -->
+  <h1 class="bx--type-expressive-heading-03">
+    Primer Semestre
+  </h1>
+
+  <!-- Subtítulo -->
+  <p class="bx--type-body-long-01 semester-subtitle">
+    Recusos para materias y Guia del semestre en general.
+  </p>
+
+  <!-- Tabs (Materias) -->
+  <div class="bx--tabs bx--tabs--contained">
+    <ul class="bx--tabs__nav" role="tablist">
+
+      <li class="bx--tabs__nav-item bx--tabs__nav-item--selected">
+        <button class="bx--tabs__nav-link"
+                onclick="showMateria('sem1-mat1', this)">
+          Matemáticas 1
+        </button>
+      </li>
+
+      <li class="bx--tabs__nav-item">
+        <button class="bx--tabs__nav-link"
+                onclick="showMateria('sem1-mat2', this)">
+          Bases de Datos
+        </button>
+      </li>
+
+      <li class="bx--tabs__nav-item">
+        <button class="bx--tabs__nav-link"
+                onclick="showMateria('sem1-mat3', this)">
+          Algebra Lineal
+        </button>
+      </li>
+
+      <li class="bx--tabs__nav-item">
+        <button class="bx--tabs__nav-link"
+                onclick="showMateria('sem1-mat4', this)">
+          Innovacion tecnologica
+        </button>
+      </li>
+
+        <li class="bx--tabs__nav-item">
+        <button class="bx--tabs__nav-link"
+                onclick="showMateria('sem1-mat5', this)">
+          Pensamiento Critico
+        </button>
+      </li>
+
+        <li class="bx--tabs__nav-item">
+        <button class="bx--tabs__nav-link"
+                onclick="showMateria('sem1-mat6', this)">
+          Inteligencia Colectiva
+        </button>
+      </li>
+        <li class="bx--tabs__nav-item">
+        <button class="bx--tabs__nav-link"
+                onclick="showMateria('sem1-mat7', this)">
+          GUIA DEL SEMESTRE
+        </li>
+
+    </ul>
+  </div>
+</div>
+<!-- Fin del Header -->
+<!-- CONTENIDO DE MATERIAS -->
+<div class="materia active" id="sem1-mat1">
+  <h3>Matemáticas 1</h3>
+  <div class="bx--tile">Espacio para titulos</div>
+</div>
+
+<div class="materia" id="sem1-mat2">
+  <h3>Bases de Datos</h3>
+  <div class="bx--tile">LABEX</div>
+</div>
+
+<div class="materia" id="sem1-mat3">
+  <h3>Algebra Lineal</h3>
+  <div class="bx--tile">inserte chiste rancio</div>
+</div>
+
+<div class="materia" id="sem1-mat4">
+  <h3>Innovacion tecnologica</h3>
+  <div class="bx--tile">Videos de innovación tecnológica</div>
+</div>
+
+<div class="materia" id="sem1-mat5">
+  <h3>Pensamiento Critico</h3>
+  <div class="bx--tile">Videos de pensamiento crítico</div>
+</div>
+
+<div class="materia" id="sem1-mat6">
+  <h3>Inteligencia Colectiva</h3>
+  <div class="bx--tile">Videos de inteligencia colectiva</div>
+</div>
+    <div class="materia" id="sem1-mat7">
+      <h3>Guia del Semestre</h3>
+      <div class="bx--tile">Aquí va la guía del semestre</div>
+    </div>
+ </section>
+<!-- FIN DE CONTENIDO DE MATERIAS DEL PRIMER SEMESTRE-->
+
 
       <section id="sem2" class="section">
-      <h2>Segundo Semestre</h2>
-      <div class="bx--grid">
-        <div class="bx--row">
-          <div class="bx--col">
-            <h4>📹 Videos</h4>
-            <div class="bx--tile resource-card">Video introductorio</div>
-          </div>
-          <div class="bx--col">
-            <h4>📄 PDFs</h4>
-            <div class="bx--tile resource-card">Guía básica</div>
-          </div>
-          <div class="bx--col">
-            <h4>🌐 Artículos Web</h4>
-            <div class="bx--tile resource-card">Artículo recomendado</div>
-          </div>
-        </div>
-      </div>
-    </section>
+      <!-- HEADER CARBON DEL SEMESTRE -->
+<div class="semester-header">
+
+  <!-- Breadcrumb -->
+  <nav class="bx--breadcrumb bx--breadcrumb--no-trailing-slash">
+    <div class="bx--breadcrumb-item">
+      <a href="#" onclick="showSection('bienvenida')">Inicio</a>
+    </div>
+    <div class="bx--breadcrumb-item">
+      <span>Segundo semestre</span>
+    </div>
+  </nav>
+
+  <!-- Título -->
+  <h1 class="bx--type-expressive-heading-03">
+    Segundo Semestre
+  </h1>
+
+  <!-- Subtítulo -->
+  <p class="bx--type-body-long-01 semester-subtitle">
+    Recusos para materias y Guia del semestre en general.
+  </p>
+
+  <!-- Tabs (Materias) -->
+  <div class="bx--tabs bx--tabs--contained">
+    <ul class="bx--tabs__nav" role="tablist">
+
+      <li class="bx--tabs__nav-item bx--tabs__nav-item--selected">
+        <button class="bx--tabs__nav-link"
+                onclick="showMateria('sem2-mat1', this)">
+          Programacion  1
+        </button>
+      </li>
+
+      <li class="bx--tabs__nav-item">
+        <button class="bx--tabs__nav-link"
+                onclick="showMateria('sem2-mat2', this)">
+          Etica Y responsabilidad Social
+        </button>
+      </li>
+
+      <li class="bx--tabs__nav-item">
+        <button class="bx--tabs__nav-link"
+                onclick="showMateria('sem2-mat3', this)">
+          Matematicas 2
+        </button>
+      </li>
+
+      <li class="bx--tabs__nav-item">
+        <button class="bx--tabs__nav-link"
+                onclick="showMateria('sem2-mat4', this)">
+          Probabilidad y estadistica
+        </button>
+      </li>
+
+        <li class="bx--tabs__nav-item">
+        <button class="bx--tabs__nav-link"
+                onclick="showMateria('sem2-mat5', this)">
+          Gestion de proyectos
+        </button>
+      </li>
+
+        <li class="bx--tabs__nav-item">
+        <button class="bx--tabs__nav-link"
+                onclick="showMateria('sem2-mat6', this)">
+          Storytelling
+        </button>
+      </li>
+        <li class="bx--tabs__nav-item">
+        <button class="bx--tabs__nav-link"
+                onclick="showMateria('sem2-mat7', this)">
+          GUIA DEL SEMESTRE
+        </li>
+
+    </ul>
+  </div>
+</div>
+
+<!-- Fin del Header -->
+<!-- CONTENIDO DE MATERIAS -->
+<div class="materia active" id="sem2-mat1">
+
+    <!-- Pruebas con Tiles / Baldozas  SI VAS A AGREGAR MAS RECURSOS, COPIA A PARTIR DE ESTE BLOQUE, HAY UN COMENTARIO DELIMITANDOLO-->
+   <h2 class="bx--type-expressive-heading-03">Programacion 1 </h2>
+   <br />
+
+<div class="bx--grid">
+  <div class="bx--row">
+
+    <!-- PDF -->
+    <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+      <a href="docs/intro-ml.pdf" class="bx--tile bx--tile--clickable resource-tile">
+        <p class="bx--tile__title">Titulo1</p>
+        <p class="bx--tile__text">
+          explicacion
+        </p>
+        <span class="bx--tag bx--tag--blue">PDF</span>
+      </a>
+    </div>
+
+    <!-- Video -->
+    <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+      <a href="https://youtube.com" target="_blank"
+         class="bx--tile bx--tile--clickable resource-tile">
+        <p class="bx--tile__title">Titulo2</p>
+        <p class="bx--tile__text">
+          explicacion
+        </p>
+        <span class="bx--tag bx--tag--green">Video</span>
+      </a>
+    </div>
+
+    <!-- Blog -->
+    <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+      <a href="blog/redes.html" class="bx--tile bx--tile--clickable resource-tile">
+        <p class="bx--tile__title">Titulo3</p>
+        <p class="bx--tile__text">
+          explicacion
+        </p>
+        <span class="bx--tag bx--tag--gray">Artículo</span>
+      </a>
+    </div>
+
+  </div>
+</div>
+   <!-- Fin de Baldozas de esta materia, Tambien llamados Tiles-->
+
+</div>
+
+<div class="materia" id="sem2-mat2">
+     <!-- Pruebas con Tiles / Baldozas -->
+   <h2 class="bx--type-expressive-heading-03">Etica Y responsabilidad Social</h2>
+   <br />
+
+<div class="bx--grid">
+  <div class="bx--row">
+
+    <!-- PDF -->
+    <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+      <a href="docs/intro-ml.pdf" class="bx--tile bx--tile--clickable resource-tile">
+        <p class="bx--tile__title">Titulo1</p>
+        <p class="bx--tile__text">
+          explicacion
+        </p>
+        <span class="bx--tag bx--tag--blue">PDF</span>
+      </a>
+    </div>
+
+    <!-- Video -->
+    <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+      <a href="https://youtube.com" target="_blank"
+         class="bx--tile bx--tile--clickable resource-tile">
+        <p class="bx--tile__title">Titulo2</p>
+        <p class="bx--tile__text">
+          explicacion
+        </p>
+        <span class="bx--tag bx--tag--green">Video</span>
+      </a>
+    </div>
+
+    <!-- Blog -->
+    <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+      <a href="blog/redes.html" class="bx--tile bx--tile--clickable resource-tile">
+        <p class="bx--tile__title">Titulo3</p>
+        <p class="bx--tile__text">
+          explicacion
+        </p>
+        <span class="bx--tag bx--tag--gray">Artículo</span>
+      </a>
+    </div>
+
+  </div>
+</div>
+   <!-- Fin de Baldozas de esta materia, Tambien llamados Tiles-->
+
+</div><!-- Este div es el de la materia completa, Nunca copies hasta aqui, primer aviso-->
+
+<div class="materia" id="sem2-mat3">
+
+    <!-- Pruebas con Tiles / Baldozas  SI VAS A AGREGAR MAS RECURSOS, COPIA A PARTIR DE ESTE BLOQUE, HAY UN COMENTARIO DELIMITANDOLO-->
+   <h2 class="bx--type-expressive-heading-03"> Matematicas 2 </h2>
+   <br />
+
+<div class="bx--grid">
+  <div class="bx--row">
+
+    <!-- PDF -->
+    <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+      <a href="docs/intro-ml.pdf" class="bx--tile bx--tile--clickable resource-tile">
+        <p class="bx--tile__title">Titulo1</p>
+        <p class="bx--tile__text">
+          explicacion
+        </p>
+        <span class="bx--tag bx--tag--blue">PDF</span>
+      </a>
+    </div>
+
+    <!-- Video -->
+    <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+      <a href="https://youtube.com" target="_blank"
+         class="bx--tile bx--tile--clickable resource-tile">
+        <p class="bx--tile__title">Titulo2</p>
+        <p class="bx--tile__text">
+          explicacion
+        </p>
+        <span class="bx--tag bx--tag--green">Video</span>
+      </a>
+    </div>
+
+    <!-- Blog -->
+    <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+      <a href="blog/redes.html" class="bx--tile bx--tile--clickable resource-tile">
+        <p class="bx--tile__title">Titulo3</p>
+        <p class="bx--tile__text">
+          explicacion
+        </p>
+        <span class="bx--tag bx--tag--gray">Artículo</span>
+      </a>
+    </div>
+
+  </div>
+</div>
+   <!-- Fin de Baldozas de esta materia, Tambien llamados Tiles COPIAR HASTA AQUI-->
+
+</div>
+
+<div class="materia" id="sem2-mat4">
+
+    <!-- Pruebas con Tiles / Baldozas  SI VAS A AGREGAR MAS RECURSOS, COPIA A PARTIR DE ESTE BLOQUE, HAY UN COMENTARIO DELIMITANDOLO-->
+   <h2 class="bx--type-expressive-heading-03">Probabilidad y estadistica</h2>
+   <br />
+
+<div class="bx--grid">
+  <div class="bx--row">
+
+    <!-- PDF -->
+    <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+      <a href="docs/intro-ml.pdf" class="bx--tile bx--tile--clickable resource-tile">
+        <p class="bx--tile__title">Titulo1</p>
+        <p class="bx--tile__text">
+          explicacion
+        </p>
+        <span class="bx--tag bx--tag--blue">PDF</span>
+      </a>
+    </div>
+
+    <!-- Video -->
+    <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+      <a href="https://youtube.com" target="_blank"
+         class="bx--tile bx--tile--clickable resource-tile">
+        <p class="bx--tile__title">Titulo2</p>
+        <p class="bx--tile__text">
+          explicacion
+        </p>
+        <span class="bx--tag bx--tag--green">Video</span>
+      </a>
+    </div>
+
+    <!-- Blog -->
+    <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+      <a href="blog/redes.html" class="bx--tile bx--tile--clickable resource-tile">
+        <p class="bx--tile__title">Titulo3</p>
+        <p class="bx--tile__text">
+          explicacion
+        </p>
+        <span class="bx--tag bx--tag--gray">Artículo</span>
+      </a>
+    </div>
+
+  </div>
+</div>
+   <!-- Fin de Baldozas de esta materia, Tambien llamados Tiles COPIAR HASTA AQUI-->
+
+</div>
+
+<div class="materia" id="sem2-mat5">
+
+    <!-- Pruebas con Tiles / Baldozas  SI VAS A AGREGAR MAS RECURSOS, COPIA A PARTIR DE ESTE BLOQUE, HAY UN COMENTARIO DELIMITANDOLO-->
+   <h2 class="bx--type-expressive-heading-03">Gestion de proyectos</h2>
+   <br />
+
+<div class="bx--grid">
+  <div class="bx--row">
+
+    <!-- PDF -->
+    <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+      <a href="docs/intro-ml.pdf" class="bx--tile bx--tile--clickable resource-tile">
+        <p class="bx--tile__title">Titulo1</p>
+        <p class="bx--tile__text">
+          explicacion
+        </p>
+        <span class="bx--tag bx--tag--blue">PDF</span>
+      </a>
+    </div>
+
+    <!-- Video -->
+    <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+      <a href="https://youtube.com" target="_blank"
+         class="bx--tile bx--tile--clickable resource-tile">
+        <p class="bx--tile__title">Titulo2</p>
+        <p class="bx--tile__text">
+          explicacion
+        </p>
+        <span class="bx--tag bx--tag--green">Video</span>
+      </a>
+    </div>
+
+    <!-- Blog -->
+    <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+      <a href="blog/redes.html" class="bx--tile bx--tile--clickable resource-tile">
+        <p class="bx--tile__title">Titulo3</p>
+        <p class="bx--tile__text">
+          explicacion
+        </p>
+        <span class="bx--tag bx--tag--gray">Artículo</span>
+      </a>
+    </div>
+
+  </div>
+</div>
+   <!-- Fin de Baldozas de esta materia, Tambien llamados Tiles COPIAR HASTA AQUI-->
+
+</div>
+
+<div class="materia" id="sem2-mat6">
+
+    <!-- Pruebas con Tiles / Baldozas  SI VAS A AGREGAR MAS RECURSOS, COPIA A PARTIR DE ESTE BLOQUE, HAY UN COMENTARIO DELIMITANDOLO-->
+   <h2 class="bx--type-expressive-heading-03">Storytelling </h2>
+   <br />
+
+<div class="bx--grid">
+  <div class="bx--row">
+
+    <!-- PDF -->
+    <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+      <a href="docs/intro-ml.pdf" class="bx--tile bx--tile--clickable resource-tile">
+        <p class="bx--tile__title">Titulo1</p>
+        <p class="bx--tile__text">
+          explicacion
+        </p>
+        <span class="bx--tag bx--tag--blue">PDF</span>
+      </a>
+    </div>
+
+    <!-- Video -->
+    <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+      <a href="https://youtube.com" target="_blank"
+         class="bx--tile bx--tile--clickable resource-tile">
+        <p class="bx--tile__title">Titulo2</p>
+        <p class="bx--tile__text">
+          explicacion
+        </p>
+        <span class="bx--tag bx--tag--green">Video</span>
+      </a>
+    </div>
+
+    <!-- Blog -->
+    <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+      <a href="blog/redes.html" class="bx--tile bx--tile--clickable resource-tile">
+        <p class="bx--tile__title">Titulo3</p>
+        <p class="bx--tile__text">
+          explicacion
+        </p>
+        <span class="bx--tag bx--tag--gray">Artículo</span>
+      </a>
+    </div>
+
+  </div>
+</div>
+   <!-- Fin de Baldozas de esta materia, Tambien llamados Tiles COPIAR HASTA AQUI-->
+
+</div>
+    <div class="materia" id="sem2-mat7">
+      <h3>Guia del Semestre</h3>
+      <div class="bx--tile">Aquí va la guía del semestre</div>
+    </div>
+ </section>
+<!-- FIN DE CONTENIDO DE MATERIAS DEL Segundo SEMESTRE-->
+
+
     <section id="sem3" class="section">
+
         <h2>Tercer Semestre</h2>
         <p>Mismos apartados: Videos, PDF y Artículos.</p>
   <!-- Pruebas con Tiles-->
@@ -418,7 +1005,6 @@
 
 
         <!-- Pruebas Con Ventana Modal-->
-
 <button class="bx--btn bx--btn--primary" type="button" data-modal-target="#modal-l6dgz3717cj">Ver ventana</button>
 
 <div data-modal id="modal-l6dgz3717cj" class="bx--modal " role="dialog"
@@ -431,43 +1017,11 @@
         <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bx--modal-close__icon" width="16" height="16" viewBox="0 0 32 32" aria-hidden="true"><path d="M17.4141 16L24 9.4141 22.5859 8 16 14.5859 9.4143 8 8 9.4141 14.5859 16 8 22.5859 9.4143 24 16 17.4141 22.5859 24 24 22.5859 17.4141 16z"></path></svg>
       </button>
     </div>
-
     <!-- Note: Modals with content that scrolls, at any viewport, requires `tabindex="0"` on the `bx--modal-content` element -->
 
     <div class="bx--modal-content" tabindex="0">
       <bold>Esta ventana puede servir para los contenidos, por eso esta aqui </bold>
 
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean id accumsan augue. Phasellus consequat augue
-        vitae
-        tellus tincidunt posuere. Curabitur justo urna, consectetur vel elit iaculis, ultrices condimentum risus. Nulla
-        facilisi.
-        Etiam venenatis molestie tellus. Quisque consectetur non risus eu rutrum. </p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean id accumsan augue. Phasellus consequat augue
-        vitae
-        tellus tincidunt posuere. Curabitur justo urna, consectetur vel elit iaculis, ultrices condimentum risus. Nulla
-        facilisi.
-        Etiam venenatis molestie tellus. Quisque consectetur non risus eu rutrum. </p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean id accumsan augue. Phasellus consequat augue
-        vitae
-        tellus tincidunt posuere. Curabitur justo urna, consectetur vel elit iaculis, ultrices condimentum risus. Nulla
-        facilisi.
-        Etiam venenatis molestie tellus. Quisque consectetur non risus eu rutrum. </p>
-        <h3>Lorem ipsum</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean id accumsan augue. Phasellus consequat augue
-        vitae
-        tellus tincidunt posuere. Curabitur justo urna, consectetur vel elit iaculis, ultrices condimentum risus. Nulla
-        facilisi.
-        Etiam venenatis molestie tellus. Quisque consectetur non risus eu rutrum. </p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean id accumsan augue. Phasellus consequat augue
-        vitae
-        tellus tincidunt posuere. Curabitur justo urna, consectetur vel elit iaculis, ultrices condimentum risus. Nulla
-        facilisi.
-        Etiam venenatis molestie tellus. Quisque consectetur non risus eu rutrum. </p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean id accumsan augue. Phasellus consequat augue
-        vitae
-        tellus tincidunt posuere. Curabitur justo urna, consectetur vel elit iaculis, ultrices condimentum risus. Nulla
-        facilisi.
-        Etiam venenatis molestie tellus. Quisque consectetur non risus eu rutrum. </p>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean id accumsan augue. Phasellus consequat augue
         vitae
         tellus tincidunt posuere. Curabitur justo urna, consectetur vel elit iaculis, ultrices condimentum risus. Nulla
@@ -484,7 +1038,6 @@
   <!-- Note: focusable span allows for focus wrap feature within Modals -->
   <span tabindex="0"></span>
 </div>
-
         <!-- Final de la ventana modal -->
 
     </section>
@@ -588,7 +1141,7 @@
   <!-- Scripts -->
     <!-- Script original  https://unpkg.com/carbon-components/scripts/carbon-components.min.js-->
   <script src="https://unpkg.com/carbon-components/scripts/carbon-components.js"></script>
-  <script>
+    <script>
     function showSection(id) {
       document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
       document.getElementById(id).classList.add('active');
@@ -605,5 +1158,22 @@
       btn.parentElement.classList.toggle('bx--accordion__item--active');
     }
   </script>
+  <script>
+function showMateria(id, btn) {
+  // Ocultar materias del semestre actual
+  btn.closest('section')
+     .querySelectorAll('.materia')
+     .forEach(m => m.classList.remove('active'));
+
+  document.getElementById(id).classList.add('active');
+
+  // Tabs activas
+  btn.closest('.bx--tabs__nav')
+     .querySelectorAll('.bx--tabs__nav-item')
+     .forEach(t => t.classList.remove('bx--tabs__nav-item--selected'));
+
+  btn.parentElement.classList.add('bx--tabs__nav-item--selected');
+}
+</script>
 </body>
-</html>
+</html> 

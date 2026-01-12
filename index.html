@@ -1,395 +1,46 @@
-<!-- Lo hice usando IA, y el IBM CARBON DESIGN SYSTEM, por que soy masoquista y me gusta su diseño.-->
-   <!-- SEPARAR POR MATERIAS EN CADA SEMESTRE. -->
-       <!-- https://www.wolframalpha.com/. -->  
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>ComunidadCUGDL</title>
+  <title>CELC - CUGDL</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
- <link rel="icon" type="image/png" sizes="32x32" href="./imagenes/pinguino.png">
-  <!-- Carbon Design System CSS ORIGINAL, Todos los style de abajo modifican los valores del documento, lo que no se especifique mas abajo, quedara por default -->
-   <!-- Tal y como el siguiente documento https://unpkg.com/carbon-components/css/carbon-components.min.css"-->
-  <link rel="stylesheet" href="https://unpkg.com/carbon-components/css/carbon-components.min.css" /> 
-
-  <!-- Google Fonts para mejorar la tipografía, No hacen nada de momento.-->
-   <!-- Puesto que todo eso viene en  las propiedades del CSS de Carbon -->
-       <!-- El IBM CARBON DESIGN SYSTEM es un framework de diseño. muy completo para las webs Me ahorro mucho tiempo -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
- <!-- Ahora si, en esta parte le añadimos nuestro sabor al CSS-->
-  <style>
-    body {
-      display: flex;
-      min-height: 100vh;
-    }
-      .bx--accordion__heading {
-      width: 100%;
-      text-align: center;
-      cursor: pointer;
-      color: #fff;
-    }
-    .sidebar {
-      width: 280px;
-      background-color: #161616;
-      color: #fff;
-    }
-
-    .sidebar h2 {
-      padding: 1rem;
-      font-size: 1.1rem;
-      border-bottom: 1px solid #393939;
-    }
-
-    .content {
-      flex: 1;
-      padding: 2rem;
-      background-color: #1a1a1a;
-    }
-
-    .section {
-      display: none;
-    }
-
-    .section.active {
-      display: block;
-    }
-
-    .resource-card {
-      margin-bottom: 1rem;
-    }
-    
-    .fondo-header {
-    min-height: 300px;
-    background-image: url('./imagenes/fondov2.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-/* Cambio de estilo del destello del sidebar*/
-/* Hover */
-.sidebar .bx--accordion__heading:hover::before {
-  background-color: #6c36ff !important;
-}
-
-/* Focus (teclado) */
-.sidebar .bx--accordion__heading:focus::before {
-  background-color: #6c36ffb0 !important;
-}
-
-/* Active (accordion abierto) */
-.sidebar .bx--accordion__item--active > 
-.bx--accordion__heading::before {
-  background-color: #6c36ff41 !important;
-}
-
-/* Transición suave */
-.sidebar .bx--accordion__heading::before {
-  transition: background-color 0.15s ease;
-}
-.bx--body {
-  font-size: .875rem;
-  font-weight: 400;
-  line-height: 1.28572;
-  letter-spacing: .16px;
-  color: #ffffff;
-  line-height: 1;
-}
-
-.bx--modal-content {
-  overflow-y: auto;
-}
-/* Comienzo de Estilo para los Tiles*/
-  .resource-tile {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.resource-tile .bx--tile__title {
-  font-size: 1rem;
-  font-weight: 600;
-  margin-bottom: .5rem;
-}
-
-.resource-tile .bx--tile__text {
-  font-size: .875rem;
-  color: #c6c6c6;
-  margin-bottom: 1rem;
-}
-
-.resource-tile .bx--tag {
-  align-self: flex-start;
-}
-
-/* Final de estilo para los tiles*/
-
-/* Estilo para el Footer*/
-.ibm-footer {
-  background-color: #161616;
-  padding: 4rem 0 2rem;
-  margin-top: 4rem;
-}
-
-.footer-logo {
-  width: 250px;
-  margin-bottom: 1.5rem;
-}
-
-.footer-title {
-  color: #ffffff;
-  font-size: .875rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-}
-
-.footer-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.footer-list li {
-  margin-bottom: .5rem;
-}
-
-.footer-list a {
-  color: #c6c6c6;
-  font-size: .875rem;
-  text-decoration: none;
-}
-
-.footer-list a:hover {
-  color: #ffffff;
-  text-decoration: underline;
-}
-
-.footer-bottom {
-  margin-top: 3rem;
-  border-top: 1px solid #393939;
-  padding-top: 1.5rem;
-}
-
-.footer-copy {
-  font-size: .75rem;
-  color: #8d8d8d;
-}
-
-/* Botón Bienvenida */
-.welcome-btn {
-  width: 100%;
-  background: transparent;
-  border: none;
-  color: #ffffff;
-  padding: 0.75rem 1rem;
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  cursor: pointer;
-  font-size: 0.875rem;
-  text-align: left;
-  transition: background-color 0.15s ease;
-}
-
-/* Hover */
-.welcome-btn:hover {
-  background-color: #262626;
-}
-
-/* Focus accesible */
-.welcome-btn:focus {
-  outline: 2px solid #0f62fe;
-  outline-offset: -2px;
-}
-
-/* Icono PNG */
-.welcome-icon {
-  width: 16px;      /* tamaño Carbon estándar */
-  height: 16px;
-  object-fit: contain;
-  flex-shrink: 0;
-}
-
-/* Texto del boton */
-.welcome-text {
-  flex: 1;
-  white-space: nowrap;
-}
-.welcome-icon {
-  filter: brightness(0) invert(1);
-}
-/* Final del boton de bienvenida*/
-
-.bx--type-expressive-heading-03 {
-  font-weight: 700 
+  <link rel="icon" type="image/png" sizes="32x32" href="./imagenes/pinguino.png">
   
-}
-/* ESTILO HEADER MATERIASS*/
-/* HEADER DE SEMESTRE */
-.semester-header {
-  padding: 2rem 0 1.5rem;
-  border-bottom: 1px solid #393939;
-  margin-bottom: 2rem;
-}
+  <link rel="stylesheet" href="https://unpkg.com/carbon-components/css/carbon-components.min.css" /> 
+  
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-/* Subtítulo */
-.semester-subtitle {
-  color: #c6c6c6;
-  margin-top: 0.5rem;
-  margin-bottom: 1.5rem;
-}
+  <link rel="stylesheet" href="style.css" />
 
-/* Breadcrumb spacing */
-.bx--breadcrumb {
-  margin-bottom: 1rem;
-}
-
-/* Tabs separación */
-.bx--tabs {
-  margin-top: 1rem;
-}
-.materia {
-  display: none;
-}
-
-.materia.active {
-  display: block;
-}
-/* ESTILOS BOTONES DEL HEADER*/
-/* ================================
-/* Botón base */
-.bx--tabs__nav-link {
-  background: none;
-  border: none;
-  padding: 0.75rem 1rem;
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: #c0c0c0; 
-  cursor: pointer;
-  position: relative;
-  transition: color 0.15s ease;
-}
-
-@media (min-width: 42rem) {
-  .bx--tabs__nav-item--selected:not(.bx--tabs__nav-item--disabled) .bx--tabs__nav-link, .bx--tabs__nav-item--selected:not(.bx--tabs__nav-item--disabled) .bx--tabs__nav-link:focus, .bx--tabs__nav-item--selected:not(.bx--tabs__nav-item--disabled) .bx--tabs__nav-link:active {
-    font-size: .875rem;
-    font-weight: 600;
-    line-height: 1.28572;
-    letter-spacing: .16px;
-    border-bottom: 2px solid #6c36ff;
-    color: #fff;
-  }
-}
-/* Hover */
-.bx--tabs__nav-link:hover {
-  color: #6c36ff;
-}
-
-/* Focus accesible */
-.bx--tabs__nav-link:focus {
-  outline: none;
-  color: #ff0000;
-}
-
-/* Quitar estilos raros por defecto */
-.bx--tabs__nav-link::before {
-  display: none;
-}
-
-/* ================================
-   TAB ACTIVA
-   ================================ */
-
-.bx--tabs__nav-item--selected
-.bx--tabs__nav-link {
-  color: #6c36ff;
-  font-weight: 600;
-}
-
-/* Subrayado activo */
-.bx--tabs__nav-item--selected
-.bx--tabs__nav-link::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -1px;
-  width: 100%;
-  height: 3px;
-  background-color: #6c36ff;
-}
-
-/* ================================
-   CONTENEDOR DE TABS
-   ================================ */
-
-.bx--tabs__nav {
-  border-bottom: 1px solid #e0e0e0;
-}
-
-/* Quitar borde azul Carbon */
-.bx--tabs--contained .bx--tabs__nav {
-  border-bottom: 1px solid #ffffff;
-}
-/* ================================
-   OVERRIDE DEFINITIVO HOVER TABS (CARBON)
-   ================================ */
-
-@media (min-width: 42rem) {
-
-  /* Hover normal */
-  .bx--tabs__nav-item:not(.bx--tabs__nav-item--disabled)
-  .bx--tabs__nav-link:hover {
-    color: #ffffff !important;
-  }
-
-  /* Hover sobre tab ACTIVA */
-  .bx--tabs__nav-item--selected:not(.bx--tabs__nav-item--disabled)
-  .bx--tabs__nav-link:hover {
-    color: #ffffff !important;
-  }
-}
-
-  </style>
 </head>
 <body class="bx--body">
 
-  <!-- Inicio del Sidebar-->
-  <aside class="sidebar">
-    <h2>Menú de recursos</h2>
+  <button class="menu-toggle" onclick="toggleSidebar()">☰ Menú</button>
+
+  <aside class="sidebar" id="mainSidebar">
+    <h2>CELC</h2>
+    
+    <button class="welcome-btn" onclick="showSection('bienvenida'); closeSidebarMobile()">
+      <img src="./imagenes/home.svg" alt="🏠" class="welcome-icon" onerror="this.style.display='none'"/>
+      <span class="welcome-text">Inicio / Bienvenida</span>
+    </button>
+
     <div class="bx--accordion">
-
-      <button class="welcome-btn" onclick="showSection('bienvenida')">
-  <img
-    src="./imagenes/home.svg"
-    alt=""
-    class="welcome-icon"
-    aria-hidden="true"
-  />
-  <span class="welcome-text">Bienvenida</span>
-</button>
-
-
       <div class="bx--accordion__item">
         <button class="bx--accordion__heading" onclick="toggleAccordion(this)">
           <span class="bx--accordion__title">Primer Semestre</span>
         </button>
         <div class="bx--accordion__content">
-          <button class="bx--btn bx--btn--ghost" onclick="showSection('sem1')">Ver sección</button>
+          <button class="bx--btn bx--btn--ghost bx--btn--sm" style="width:100%" onclick="showSection('sem1'); closeSidebarMobile()">Ir a materias</button>
         </div>
       </div>
-
+      
       <div class="bx--accordion__item">
         <button class="bx--accordion__heading" onclick="toggleAccordion(this)">
           <span class="bx--accordion__title">Segundo Semestre</span>
         </button>
         <div class="bx--accordion__content">
-          <button class="bx--btn bx--btn--ghost" onclick="showSection('sem2')">Ver sección</button>
+          <button class="bx--btn bx--btn--ghost bx--btn--sm" style="width:100%" onclick="showSection('sem2'); closeSidebarMobile()">Ir a materias</button>
         </div>
       </div>
 
@@ -398,1336 +49,281 @@
           <span class="bx--accordion__title">Tercer Semestre</span>
         </button>
         <div class="bx--accordion__content">
-          <button class="bx--btn bx--btn--ghost" onclick="showSection('sem3')">Ver sección</button>
+          <button class="bx--btn bx--btn--ghost bx--btn--sm" style="width:100%" onclick="showSection('sem3'); closeSidebarMobile()">Ir a materias</button>
         </div>
       </div>
-
+      
       <div class="bx--accordion__item">
         <button class="bx--accordion__heading" onclick="toggleAccordion(this)">
-          <span class="bx--accordion__title">Cuarto Semestre</span>
+          <span class="bx--accordion__title">Recursos Extra</span>
         </button>
         <div class="bx--accordion__content">
-          <button class="bx--btn bx--btn--ghost" onclick="showSection('sem4')">Ver sección</button>
+          <button class="bx--btn bx--btn--ghost bx--btn--sm" onclick="showSection('sem5'); closeSidebarMobile()">Cheatsheets Dev</button>
+          <button class="bx--btn bx--btn--ghost bx--btn--sm" onclick="showSection('sem6'); closeSidebarMobile()">Manuales</button>
         </div>
       </div>
-
-      <div class="bx--accordion__item">
-        <button class="bx--accordion__heading" onclick="toggleAccordion(this)">
-          <span class="bx--accordion__title">Funciones para programadores</span>
-        </button>
-        <div class="bx--accordion__content">
-          <button class="bx--btn bx--btn--ghost" onclick="showSection('sem5')">Ver sección</button>
-        </div>
-      </div>
-
-      <div class="bx--accordion__item">
-        <button class="bx--accordion__heading" onclick="toggleAccordion(this)">
-          <span class="bx--accordion__title">Mini manuales de supervivencia</span>
-        </button>
-        <div class="bx--accordion__content">
-          <button class="bx--btn bx--btn--ghost" onclick="showSection('sem6')">Ver sección</button>
-        </div>
-      </div>
-
     </div>
   </aside>
-<!-- Fin del Sidebar-->
 
-  <!-- Main Content -->
   <main class="content">
 
-    <!-- Bienvenida -->
     <section id="bienvenida" class="section active">
-            <!-- Banner de Bienvenida-->
-      <div class="fondo-header">
-    <img src="./imagenes/udg.png" alt="" class="logo-udg"> <!-- Banner de Bienvenida-->
-  </div>
-      <!-- TEXTO DE BIENVENIDA-->
-      <br />  
-      <br />  
-      <h1 class="bx--type-expressive-heading-03">Bienvenido al proyecto web comunitario</h1>
-      <br />
-      <p class="bx--type-body-long-01">
-        Este sitio está diseñado por y para alumnos de CUGDL. para centralizar recursos educativos por semestre.
-        Aquí encontrarás videos, documentos PDF y artículos web de apoyo. Esta es la beta, añadiremos bugs para solucuonarlos despues.        
-      </p>
-    </section>
-    <!-- A la hora de incluir algo en el texto de bienvenida, Ponerlo dentro del Section. -->
-
-    <!-- Semestre Template -->
-    <section id="sem1" class="section">
-<!-- HEADER CARBON DEL SEMESTRE -->
-<div class="semester-header">
-
-  <!-- Breadcrumb -->
-  <nav class="bx--breadcrumb bx--breadcrumb--no-trailing-slash">
-    <div class="bx--breadcrumb-item">
-      <a href="#" onclick="showSection('bienvenida')">Inicio</a>
-    </div>
-    <div class="bx--breadcrumb-item">
-      <span>Primer Semestre</span>
-    </div>
-  </nav>
-
-  <!-- Título -->
-  <h1 class="bx--type-expressive-heading-03">
-    Primer Semestre
-  </h1>
-
-  <!-- Subtítulo -->
-  <p class="bx--type-body-long-01 semester-subtitle">
-    Recusos para materias y Guia del semestre en general.
-  </p>
-
-  <!-- Tabs (Materias) -->
-  <div class="bx--tabs bx--tabs--contained">
-    <ul class="bx--tabs__nav" role="tablist">
-
-      <li class="bx--tabs__nav-item bx--tabs__nav-item--selected">
-        <button class="bx--tabs__nav-link"
-                onclick="showMateria('sem1-mat1', this)">
-          Matemáticas 1
-        </button>
-      </li>
-
-      <li class="bx--tabs__nav-item">
-        <button class="bx--tabs__nav-link"
-                onclick="showMateria('sem1-mat2', this)">
-          Bases de Datos
-        </button>
-      </li>
-
-      <li class="bx--tabs__nav-item">
-        <button class="bx--tabs__nav-link"
-                onclick="showMateria('sem1-mat3', this)">
-          Algebra Lineal
-        </button>
-      </li>
-
-      <li class="bx--tabs__nav-item">
-        <button class="bx--tabs__nav-link"
-                onclick="showMateria('sem1-mat4', this)">
-          Innovacion tecnologica
-        </button>
-      </li>
-
-        <li class="bx--tabs__nav-item">
-        <button class="bx--tabs__nav-link"
-                onclick="showMateria('sem1-mat5', this)">
-          Pensamiento Critico
-        </button>
-      </li>
-
-        <li class="bx--tabs__nav-item">
-        <button class="bx--tabs__nav-link"
-                onclick="showMateria('sem1-mat6', this)">
-          Inteligencia Colectiva
-        </button>
-      </li>
-        <li class="bx--tabs__nav-item">
-        <button class="bx--tabs__nav-link"
-                onclick="showMateria('sem1-mat7', this)">
-          GUIA DEL SEMESTRE
-        </li>
-
-    </ul>
-  </div>
-</div>
-<!-- Fin del Header -->
-<!-- CONTENIDO DE MATERIAS -->
-<div class="materia active" id="sem1-mat1">
-  <h3>Matemáticas 1</h3>
-  <div class="bx--tile">Espacio para titulos</div>
-</div>
-
-<div class="materia" id="sem1-mat2">
-  <h3>Bases de Datos</h3>
-  <div class="bx--tile">LABEX</div>
-</div>
-
-<div class="materia" id="sem1-mat3">
-  <h3>Algebra Lineal</h3>
-  <div class="bx--tile">inserte chiste rancio</div>
-</div>
-
-<div class="materia" id="sem1-mat4">
-  <h3>Innovacion tecnologica</h3>
-  <div class="bx--tile">Videos de innovación tecnológica</div>
-</div>
-
-<div class="materia" id="sem1-mat5">
-  <h3>Pensamiento Critico</h3>
-  <div class="bx--tile">Videos de pensamiento crítico</div>
-</div>
-
-<div class="materia" id="sem1-mat6">
-  <h3>Inteligencia Colectiva</h3>
-  <div class="bx--tile">Videos de inteligencia colectiva</div>
-</div>
-    <div class="materia" id="sem1-mat7">
-      <h3>Guia del Semestre</h3>
-      <div class="bx--tile">Aquí va la guía del semestre</div>
-    </div>
- </section>
-<!-- FIN DE CONTENIDO DE MATERIAS DEL PRIMER SEMESTRE-->
-
-
-      <section id="sem2" class="section">
-      <!-- HEADER DEL SEGUNDO SEMESTRE -->
-<div class="semester-header">
-
-  <!-- Breadcrumb -->
-  <nav class="bx--breadcrumb bx--breadcrumb--no-trailing-slash">
-    <div class="bx--breadcrumb-item">
-      <a href="#" onclick="showSection('bienvenida')">Inicio</a>
-    </div>
-    <div class="bx--breadcrumb-item">
-      <span>Segundo semestre</span>
-    </div>
-  </nav>
-
-  <!-- Título -->
-  <h1 class="bx--type-expressive-heading-03">
-    Segundo Semestre
-  </h1>
-
-  <!-- Subtítulo -->
-  <p class="bx--type-body-long-01 semester-subtitle">
-    Recusos para materias y Guia del semestre en general.
-  </p>
-
-  <!-- Tabs (Materias) -->
-  <div class="bx--tabs bx--tabs--contained">
-    <ul class="bx--tabs__nav" role="tablist">
-
-      <li class="bx--tabs__nav-item bx--tabs__nav-item--selected">
-        <button class="bx--tabs__nav-link"
-                onclick="showMateria('sem2-mat1', this)">
-          Programacion  1
-        </button>
-      </li>
-
-      <li class="bx--tabs__nav-item">
-        <button class="bx--tabs__nav-link"
-                onclick="showMateria('sem2-mat2', this)">
-          Etica Y responsabilidad Social
-        </button>
-      </li>
-
-      <li class="bx--tabs__nav-item">
-        <button class="bx--tabs__nav-link"
-                onclick="showMateria('sem2-mat3', this)">
-          Matematicas 2
-        </button>
-      </li>
-
-      <li class="bx--tabs__nav-item">
-        <button class="bx--tabs__nav-link"
-                onclick="showMateria('sem2-mat4', this)">
-          Probabilidad y estadistica
-        </button>
-      </li>
-
-        <li class="bx--tabs__nav-item">
-        <button class="bx--tabs__nav-link"
-                onclick="showMateria('sem2-mat5', this)">
-          Gestion de proyectos
-        </button>
-      </li>
-
-        <li class="bx--tabs__nav-item">
-        <button class="bx--tabs__nav-link"
-                onclick="showMateria('sem2-mat6', this)">
-          Storytelling
-        </button>
-      </li>
-        <li class="bx--tabs__nav-item">
-        <button class="bx--tabs__nav-link"
-                onclick="showMateria('sem2-mat7', this)">
-          GUIA DEL SEMESTRE
-        </li>
-
-    </ul>
-  </div>
-</div>
-
-<!-- Fin del Header -->
-<!-- CONTENIDO DE MATERIAS DEL SEGUNDO SEMESTRE -->
-<div class="materia active" id="sem2-mat1">
-
-    <!-- Pruebas con Tiles / Baldozas  SI VAS A AGREGAR MAS RECURSOS, COPIA A PARTIR DE ESTE BLOQUE, HAY UN COMENTARIO DELIMITANDOLO-->
-   <h2 class="bx--type-expressive-heading-03">Programacion 1 </h2>
-   <br />
-
-<div class="bx--grid">
-  <div class="bx--row">
-
-    <!-- PDF -->
-    <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
-      <a href="docs/intro-ml.pdf" class="bx--tile bx--tile--clickable resource-tile">
-        <p class="bx--tile__title">Titulo1</p>
-        <p class="bx--tile__text">
-          explicacion
-        </p>
-        <span class="bx--tag bx--tag--blue">PDF</span>
-      </a>
-    </div>
-
-    <!-- Video -->
-    <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
-      <a href="https://youtube.com" target="_blank"
-         class="bx--tile bx--tile--clickable resource-tile">
-        <p class="bx--tile__title">Titulo2</p>
-        <p class="bx--tile__text">
-          explicacion
-        </p>
-        <span class="bx--tag bx--tag--green">Video</span>
-      </a>
-    </div>
-
-    <!-- Blog -->
-    <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
-      <a href="blog/redes.html" class="bx--tile bx--tile--clickable resource-tile">
-        <p class="bx--tile__title">Titulo3</p>
-        <p class="bx--tile__text">
-          explicacion
-        </p>
-        <span class="bx--tag bx--tag--gray">Artículo</span>
-      </a>
-    </div>
-
-  </div>
-</div>
-   <!-- Fin de Baldozas de esta materia, Tambien llamados Tiles-->
-
-</div> <!-- Div de la materia completa-->
-
-<div class="materia" id="sem2-mat2">
-     <!-- Pruebas con Tiles / Baldozas -->
-   <h2 class="bx--type-expressive-heading-03">Etica Y responsabilidad Social</h2>
-   <br />
-
-<div class="bx--grid">
-  <div class="bx--row">
-
-    <!-- PDF -->
-    <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
-      <a href="docs/intro-ml.pdf" class="bx--tile bx--tile--clickable resource-tile">
-        <p class="bx--tile__title">Titulo1</p>
-        <p class="bx--tile__text">
-          explicacion
-        </p>
-        <span class="bx--tag bx--tag--blue">PDF</span>
-      </a>
-    </div>
-
-    <!-- Video -->
-    <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
-      <a href="https://youtube.com" target="_blank"
-         class="bx--tile bx--tile--clickable resource-tile">
-        <p class="bx--tile__title">Titulo2</p>
-        <p class="bx--tile__text">
-          explicacion
-        </p>
-        <span class="bx--tag bx--tag--green">Video</span>
-      </a>
-    </div>
-
-    <!-- Blog -->
-    <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
-      <a href="blog/redes.html" class="bx--tile bx--tile--clickable resource-tile">
-        <p class="bx--tile__title">Titulo3</p>
-        <p class="bx--tile__text">
-          explicacion
-        </p>
-        <span class="bx--tag bx--tag--gray">Artículo</span>
-      </a>
-    </div>
-
-  </div>
-</div>
-   <!-- Fin de Baldozas de esta materia, Tambien llamados Tiles-->
-
-</div><!-- Este div es el de la materia completa, Copia solo hasta aqui si quieres clonar el contenido de la materia-->
-
-<div class="materia" id="sem2-mat3">
-
-    <!-- Pruebas con Tiles / Baldozas  SI VAS A AGREGAR MAS RECURSOS, COPIA A PARTIR DE ESTE BLOQUE, HAY UN COMENTARIO DELIMITANDOLO-->
-   <h2 class="bx--type-expressive-heading-03"> Matematicas 2 </h2>
-   <br />
-
-<div class="bx--grid">
-  <div class="bx--row">
-
-    <!-- PDF -->
-    <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
-      <a href="docs/intro-ml.pdf" class="bx--tile bx--tile--clickable resource-tile">
-        <p class="bx--tile__title">Titulo1</p>
-        <p class="bx--tile__text">
-          explicacion
-        </p>
-        <span class="bx--tag bx--tag--blue">PDF</span>
-      </a>
-    </div>
-
-    <!-- Video -->
-    <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
-      <a href="https://youtube.com" target="_blank"
-         class="bx--tile bx--tile--clickable resource-tile">
-        <p class="bx--tile__title">Titulo2</p>
-        <p class="bx--tile__text">
-          explicacion
-        </p>
-        <span class="bx--tag bx--tag--green">Video</span>
-      </a>
-    </div>
-
-    <!-- Blog -->
-    <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
-      <a href="blog/redes.html" class="bx--tile bx--tile--clickable resource-tile">
-        <p class="bx--tile__title">Titulo3</p>
-        <p class="bx--tile__text">
-          explicacion
-        </p>
-        <span class="bx--tag bx--tag--gray">Artículo</span>
-      </a>
-    </div>
-
-  </div>
-</div>
-   <!-- Fin de Baldozas de esta materia, Tambien llamados Tiles COPIAR HASTA AQUI-->
-
-</div>
-
-<div class="materia" id="sem2-mat4">
-
-    <!-- Pruebas con Tiles / Baldozas  SI VAS A AGREGAR MAS RECURSOS, COPIA A PARTIR DE ESTE BLOQUE, HAY UN COMENTARIO DELIMITANDOLO-->
-   <h2 class="bx--type-expressive-heading-03">Probabilidad y estadistica</h2>
-   <br />
-
-<div class="bx--grid">
-  <div class="bx--row">
-
-    <!-- PDF -->
-    <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
-      <a href="docs/intro-ml.pdf" class="bx--tile bx--tile--clickable resource-tile">
-        <p class="bx--tile__title">Titulo1</p>
-        <p class="bx--tile__text">
-          explicacion
-        </p>
-        <span class="bx--tag bx--tag--blue">PDF</span>
-      </a>
-    </div>
-
-    <!-- Video -->
-    <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
-      <a href="https://youtube.com" target="_blank"
-         class="bx--tile bx--tile--clickable resource-tile">
-        <p class="bx--tile__title">Titulo2</p>
-        <p class="bx--tile__text">
-          explicacion
-        </p>
-        <span class="bx--tag bx--tag--green">Video</span>
-      </a>
-    </div>
-
-    <!-- Blog -->
-    <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
-      <a href="blog/redes.html" class="bx--tile bx--tile--clickable resource-tile">
-        <p class="bx--tile__title">Titulo3</p>
-        <p class="bx--tile__text">
-          explicacion
-        </p>
-        <span class="bx--tag bx--tag--gray">Artículo</span>
-      </a>
-    </div>
-
-  </div>
-</div>
-   <!-- Fin de Baldozas de esta materia, Tambien llamados Tiles COPIAR HASTA AQUI-->
-
-</div>
-
-<div class="materia" id="sem2-mat5">
-
-    <!-- Pruebas con Tiles / Baldozas  SI VAS A AGREGAR MAS RECURSOS, COPIA A PARTIR DE ESTE BLOQUE, HAY UN COMENTARIO DELIMITANDOLO-->
-   <h2 class="bx--type-expressive-heading-03">Gestion de proyectos</h2>
-   <br />
-
-<div class="bx--grid">
-  <div class="bx--row">
-
-    <!-- PDF -->
-    <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
-      <a href="docs/intro-ml.pdf" class="bx--tile bx--tile--clickable resource-tile">
-        <p class="bx--tile__title">Titulo1</p>
-        <p class="bx--tile__text">
-          explicacion
-        </p>
-        <span class="bx--tag bx--tag--blue">PDF</span>
-      </a>
-    </div>
-
-    <!-- Video -->
-    <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
-      <a href="https://youtube.com" target="_blank"
-         class="bx--tile bx--tile--clickable resource-tile">
-        <p class="bx--tile__title">Titulo2</p>
-        <p class="bx--tile__text">
-          explicacion
-        </p>
-        <span class="bx--tag bx--tag--green">Video</span>
-      </a>
-    </div>
-
-    <!-- Blog -->
-    <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
-      <a href="blog/redes.html" class="bx--tile bx--tile--clickable resource-tile">
-        <p class="bx--tile__title">Titulo3</p>
-        <p class="bx--tile__text">
-          explicacion
-        </p>
-        <span class="bx--tag bx--tag--gray">Artículo</span>
-      </a>
-    </div>
-
-  </div>
-</div>
-   <!-- Fin de Baldozas de esta materia, Tambien llamados Tiles COPIAR HASTA AQUI-->
-
-</div>
-
-<div class="materia" id="sem2-mat6">
-
-    <!-- Pruebas con Tiles / Baldozas  SI VAS A AGREGAR MAS RECURSOS, COPIA A PARTIR DE ESTE BLOQUE, HAY UN COMENTARIO DELIMITANDOLO-->
-   <h2 class="bx--type-expressive-heading-03">Storytelling </h2>
-   <br />
-
-<div class="bx--grid">
-  <div class="bx--row">
-
-    <!-- PDF -->
-    <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
-      <a href="docs/intro-ml.pdf" class="bx--tile bx--tile--clickable resource-tile">
-        <p class="bx--tile__title">Titulo1</p>
-        <p class="bx--tile__text">
-          explicacion
-        </p>
-        <span class="bx--tag bx--tag--blue">PDF</span>
-      </a>
-    </div>
-
-    <!-- Video -->
-    <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
-      <a href="https://youtube.com" target="_blank"
-         class="bx--tile bx--tile--clickable resource-tile">
-        <p class="bx--tile__title">Titulo2</p>
-        <p class="bx--tile__text">
-          explicacion
-        </p>
-        <span class="bx--tag bx--tag--green">Video</span>
-      </a>
-    </div>
-
-    <!-- Blog -->
-    <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
-      <a href="blog/redes.html" class="bx--tile bx--tile--clickable resource-tile">
-        <p class="bx--tile__title">Titulo3</p>
-        <p class="bx--tile__text">
-          explicacion
-        </p>
-        <span class="bx--tag bx--tag--gray">Artículo</span>
-      </a>
-    </div>
-
-  </div>
-</div>
-   <!-- Fin de Baldozas de esta materia, Tambien llamados Tiles COPIAR HASTA AQUI-->
-
-</div>
-    <div class="materia" id="sem2-mat7">
-      <h3>Guia del Semestre</h3>
-      <div class="bx--tile">Aquí va la guía del semestre</div>
-    </div>
- </section>
-<!-- FIN DE TODO EL CONTENIDO DE MATERIAS DEL Segundo SEMESTRE-->
-
-<!-- INICIO DE TODO LO RESPECTIVO AL TERCER SEMESTRE-->
-    <section id="sem3" class="section">
-      <!-- HEADER DEL TERCER SEMESTRE -->
-<div class="semester-header">
-
-  <!-- Breadcrumb -->
-  <nav class="bx--breadcrumb bx--breadcrumb--no-trailing-slash">
-    <div class="bx--breadcrumb-item">
-      <a href="#" onclick="showSection('bienvenida')">Inicio</a>
-    </div>
-    <div class="bx--breadcrumb-item">
-      <span>Tercer Semestre</span>
-    </div>
-  </nav>
-
-  <!-- Título -->
-  <h1 class="bx--type-expressive-heading-03">
-    Tercer Semestre
-  </h1>
-
-  <!-- Subtítulo -->
-  <p class="bx--type-body-long-01 semester-subtitle">
-    Recusos para materias y Guia del semestre en general.
-  </p>
-
-  <!-- Tabs (Materias) -->
-  <div class="bx--tabs bx--tabs--contained">
-    <ul class="bx--tabs__nav" role="tablist">
-
-      <li class="bx--tabs__nav-item bx--tabs__nav-item--selected">
-        <button class="bx--tabs__nav-link"
-                onclick="showMateria('sem3-mat1', this)">
-          Programacion  2
-        </button>
-      </li>
-
-      <li class="bx--tabs__nav-item">
-        <button class="bx--tabs__nav-link"
-                onclick="showMateria('sem3-mat2', this)">
-          Hacking Etico
-        </button>
-      </li>
-
-      <li class="bx--tabs__nav-item">
-        <button class="bx--tabs__nav-link"
-                onclick="showMateria('sem3-mat3', this)">
-          Sistemas Operativos
-        </button>
-      </li>
-
-      <li class="bx--tabs__nav-item">
-        <button class="bx--tabs__nav-link"
-                onclick="showMateria('sem3-mat4', this)">
-          Redes y Telecomunicaciones
-        </button>
-      </li>
-
-        <li class="bx--tabs__nav-item">
-        <button class="bx--tabs__nav-link"
-                onclick="showMateria('sem3-mat5', this)">
-          Gestion de Riesgos/Recuperacion de Desastres
-        </button>
-      </li>
-
-        <li class="bx--tabs__nav-item">
-        <button class="bx--tabs__nav-link"
-                onclick="showMateria('sem3-mat6', this)">
-          La Nube Computacional
-        </button>
-      </li>
-      <li class="bx--tabs__nav-item">
-        <button class="bx--tabs__nav-link"
-                onclick="showMateria('sem3-mat7', this)">
-          Bases de Datos
-        </button>
-      </li>
-        <li class="bx--tabs__nav-item">
-        <button class="bx--tabs__nav-link"
-                onclick="showMateria('sem3-mat8', this)">
-          GUIA DEL SEMESTRE
-        </button>
-      </li>
-
-    </ul>
-  </div>
-</div>
-
-<!-- Fin del Header  de el tercer semestre-->
-<!-- CONTENIDO DE  LAS MATERIAS DEL TERCER SEMESTRE -->
-<div class="materia active" id="sem3-mat1">
-    <!-- Pruebas con Tiles / Baldozas  SI VAS A AGREGAR MAS RECURSOS, COPIA A PARTIR DE ESTE BLOQUE, HAY UN COMENTARIO DELIMITANDOLO-->
-   <h2 class="bx--type-expressive-heading-03">Programacion 2 </h2>
-   <br />
-
-<div class="bx--grid">
-  <div class="bx--row">
-
-    <!-- PDF -->
-    <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
-      <a href="docs/intro-ml.pdf" class="bx--tile bx--tile--clickable resource-tile">
-        <p class="bx--tile__title">Titulo1</p>
-        <p class="bx--tile__text">
-          explicacion
-        </p>
-        <span class="bx--tag bx--tag--blue">PDF</span>
-      </a>
-    </div>
-
-    <!-- Video -->
-    <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
-      <a href="https://youtube.com" target="_blank"
-         class="bx--tile bx--tile--clickable resource-tile">
-        <p class="bx--tile__title">Titulo2</p>
-        <p class="bx--tile__text">
-          explicacion
-        </p>
-        <span class="bx--tag bx--tag--green">Video</span>
-      </a>
-    </div>
-
-    <!-- Blog -->
-    <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
-      <a href="blog/redes.html" class="bx--tile bx--tile--clickable resource-tile">
-        <p class="bx--tile__title">Titulo3</p>
-        <p class="bx--tile__text">
-          explicacion
-        </p>
-        <span class="bx--tag bx--tag--gray">Artículo</span>
-      </a>
-    </div>
-
-  </div>
-</div>
-</div>
-   <!-- Fin de Baldozas de esta materia, Tambien llamados Tiles-->
-
-<div class="materia" id="sem3-mat2">
-     <!-- Pruebas con Tiles / Baldozas -->
-   <h2 class="bx--type-expressive-heading-03">Hacking Etico</h2>
-   <br />
-
-<div class="bx--grid">
-  <div class="bx--row">
-
-    <!-- PDF -->
-    <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
-      <a href="docs/intro-ml.pdf" class="bx--tile bx--tile--clickable resource-tile">
-        <p class="bx--tile__title">Titulo1</p>
-        <p class="bx--tile__text">
-          explicacion
-        </p>
-        <span class="bx--tag bx--tag--blue">PDF</span>
-      </a>
-    </div>
-
-    <!-- Video -->
-    <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
-      <a href="https://youtube.com" target="_blank"
-         class="bx--tile bx--tile--clickable resource-tile">
-        <p class="bx--tile__title">Titulo2</p>
-        <p class="bx--tile__text">
-          explicacion
-        </p>
-        <span class="bx--tag bx--tag--green">Video</span>
-      </a>
-    </div>
-
-    <!-- Blog -->
-    <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
-      <a href="blog/redes.html" class="bx--tile bx--tile--clickable resource-tile">
-        <p class="bx--tile__title">Titulo3</p>
-        <p class="bx--tile__text">
-          explicacion
-        </p>
-        <span class="bx--tag bx--tag--gray">Artículo</span>
-      </a>
-    </div>
-
-  </div>
-</div>
-</div>
-
-   <!-- Fin de Baldozas de esta materia, Tambien llamados Tiles-->
-<div class="materia" id="sem3-mat3">
-     <!-- Pruebas con Tiles / Baldozas -->
-   <h2 class="bx--type-expressive-heading-03">Sistemas Operativos</h2>
-   <br />
-
-<div class="bx--grid">
-  <div class="bx--row">
-
-    <!-- PDF -->
-    <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
-      <a href="docs/intro-ml.pdf" class="bx--tile bx--tile--clickable resource-tile">
-        <p class="bx--tile__title">Titulo1</p>
-        <p class="bx--tile__text">
-          explicacion
-        </p>
-        <span class="bx--tag bx--tag--blue">PDF</span>
-      </a>
-    </div>
-
-    <!-- Video -->
-    <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
-      <a href="https://youtube.com" target="_blank"
-         class="bx--tile bx--tile--clickable resource-tile">
-        <p class="bx--tile__title">Titulo2</p>
-        <p class="bx--tile__text">
-          explicacion
-        </p>
-        <span class="bx--tag bx--tag--green">Video</span>
-      </a>
-    </div>
-
-    <!-- Blog -->
-    <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
-      <a href="blog/redes.html" class="bx--tile bx--tile--clickable resource-tile">
-        <p class="bx--tile__title">Titulo3</p>
-        <p class="bx--tile__text">
-          explicacion
-        </p>
-        <span class="bx--tag bx--tag--gray">Artículo</span>
-      </a>
-    </div>
-  </div>
-</div>
-</div>
-   <!-- Fin de Baldozas de esta materia, Tambien llamados Tiles-->
-
-   <div class="materia" id="sem3-mat4">
-     <!-- Pruebas con Tiles / Baldozas -->
-   <h2 class="bx--type-expressive-heading-03">Redes y Telecomunicaciones</h2>
-   <br />
-
-<div class="bx--grid">
-  <div class="bx--row">
-
-    <!-- PDF -->
-    <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
-      <a href="docs/intro-ml.pdf" class="bx--tile bx--tile--clickable resource-tile">
-        <p class="bx--tile__title">Titulo1</p>
-        <p class="bx--tile__text">
-          explicacion
-        </p>
-        <span class="bx--tag bx--tag--blue">PDF</span>
-      </a>
-    </div>
-
-    <!-- Video -->
-    <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
-      <a href="https://youtube.com" target="_blank"
-         class="bx--tile bx--tile--clickable resource-tile">
-        <p class="bx--tile__title">Titulo2</p>
-        <p class="bx--tile__text">
-          explicacion
-        </p>
-        <span class="bx--tag bx--tag--green">Video</span>
-      </a>
-    </div>
-
-    <!-- Blog -->
-    <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
-      <a href="blog/redes.html" class="bx--tile bx--tile--clickable resource-tile">
-        <p class="bx--tile__title">Titulo3</p>
-        <p class="bx--tile__text">
-          explicacion
-        </p>
-        <span class="bx--tag bx--tag--gray">Artículo</span>
-      </a>
-    </div>
-  </div>
-</div>
-</div>
-   <!-- Fin de Baldozas de esta materia, Tambien llamados Tiles-->
-
-<div class="materia" id="sem3-mat5">
-     <!-- Pruebas con Tiles / Baldozas -->
-   <h2 class="bx--type-expressive-heading-03">Gestion de Riesgos / Recuperacion de Desastres</h2>
-   <br />
-
-<div class="bx--grid">
-  <div class="bx--row">
-
-    <!-- PDF -->
-    <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
-      <a href="docs/intro-ml.pdf" class="bx--tile bx--tile--clickable resource-tile">
-        <p class="bx--tile__title">Titulo1</p>
-        <p class="bx--tile__text">
-          explicacion
-        </p>
-        <span class="bx--tag bx--tag--blue">PDF</span>
-      </a>
-    </div>
-
-    <!-- Video -->
-    <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
-      <a href="https://youtube.com" target="_blank"
-         class="bx--tile bx--tile--clickable resource-tile">
-        <p class="bx--tile__title">Titulo2</p>
-        <p class="bx--tile__text">
-          explicacion
-        </p>
-        <span class="bx--tag bx--tag--green">Video</span>
-      </a>
-    </div>
-
-    <!-- Blog -->
-    <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
-      <a href="blog/redes.html" class="bx--tile bx--tile--clickable resource-tile">
-        <p class="bx--tile__title">Titulo3</p>
-        <p class="bx--tile__text">
-          explicacion
-        </p>
-        <span class="bx--tag bx--tag--gray">Artículo</span>
-      </a>
-    </div>
-
-  </div>
-</div>
-</div>
-   <!-- Fin de Baldozas de esta materia, Tambien llamados Tiles-->
-
-   <!-- INICIO DEL CONTENIDO DE LA MATERIA-->
-<div class="materia" id="sem3-mat6">
-     <!-- Pruebas con Tiles / Baldozas -->
-   <h2 class="bx--type-expressive-heading-03">La Nube Computacional</h2>
-   <br />
-
-<div class="bx--grid">
-  <div class="bx--row">
-
-    <!-- PDF -->
-    <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
-      <a href="docs/intro-ml.pdf" class="bx--tile bx--tile--clickable resource-tile">
-        <p class="bx--tile__title">Titulo1</p>
-        <p class="bx--tile__text">
-          explicacion
-        </p>
-        <span class="bx--tag bx--tag--blue">PDF</span>
-      </a>
-    </div>
-
-    <!-- Video -->
-    <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
-      <a href="https://youtube.com" target="_blank"
-         class="bx--tile bx--tile--clickable resource-tile">
-        <p class="bx--tile__title">Titulo2</p>
-        <p class="bx--tile__text">
-          explicacion
-        </p>
-        <span class="bx--tag bx--tag--green">Video</span>
-      </a>
-    </div>
-
-    <!-- Blog -->
-    <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
-      <a href="blog/redes.html" class="bx--tile bx--tile--clickable resource-tile">
-        <p class="bx--tile__title">Titulo3</p>
-        <p class="bx--tile__text">
-          explicacion
-        </p>
-        <span class="bx--tag bx--tag--gray">Artículo</span>
-      </a>
-    </div>
-  </div>
-</div>
-</div>
-   <!-- Fin de Baldozas de esta materia, Tambien llamados Tiles-->
-
-   <!-- INICIO DEL CONTENIDO DE LA MATERIA-->
-<div class="materia" id="sem3-mat7">
-     <!-- Pruebas con Tiles / Baldozas -->
-   <h2 class="bx--type-expressive-heading-03">Bases de Datos</h2>
-   <br />
-
-<div class="bx--grid">
-  <div class="bx--row">
-
-    <!-- PDF -->
-    <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
-      <a href="docs/intro-ml.pdf" class="bx--tile bx--tile--clickable resource-tile">
-        <p class="bx--tile__title">Titulo1</p>
-        <p class="bx--tile__text">
-          explicacion
-        </p>
-        <span class="bx--tag bx--tag--blue">PDF</span>
-      </a>
-    </div>
-
-    <!-- Video -->
-    <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
-      <a href="https://youtube.com" target="_blank"
-         class="bx--tile bx--tile--clickable resource-tile">
-        <p class="bx--tile__title">Titulo2</p>
-        <p class="bx--tile__text">
-          explicacion
-        </p>
-        <span class="bx--tag bx--tag--green">Video</span>
-      </a>
-    </div>
-
-    <!-- Blog -->
-    <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
-      <a href="blog/redes.html" class="bx--tile bx--tile--clickable resource-tile">
-        <p class="bx--tile__title">Titulo3</p>
-        <p class="bx--tile__text">
-          explicacion
-        </p>
-        <span class="bx--tag bx--tag--gray">Artículo</span>
-      </a>
-    </div>  
-  </div>
-</div>
-</div>
-   <!-- Fin de Baldozas de esta materia, Tambien llamados Tiles-->
-
-   <!-- INICIO MATERIA GUIA GENERAL Aqui Va todo lo Respectivo-->
-
-   <div class="materia" id="sem3-mat8">
-     <!-- Pruebas con Tiles / Baldozas -->
-   <h2 class="bx--type-expressive-heading-03">Introducción a tercer semestre</h2>
-   <p>El tercer semestre, el semestre donde se entra de lleno a aspectos de ciberseguridad, es el semestre que desde el primer día se espera con ansias.
-     algunas personas llegan a este semestre con conocimientos extensos, otros llegan con conocimientos muy por encima y otros llegan en ceros
-     , esta guía servirá para todas las personas que por mucho o poco conocimiento tengan necesiten una guía para no estar perdidos en el semestre. 
-</p>
-   <br />
-  <h2 class="bx--type-expressive-heading-03">Resumen del semestre</h2>
-  <p>Investigar: <br />
-    Ingles <br />
-    Curso para comprender conceptos básicos de Ciencias Computacionales en dado caso de partir desde cero <br />
-    <br />
-<h2 class="bx--type-expressive-heading-03">PROGRAMACIÓN II</h2>
-<p>Fundamentos de Programación Orientada a Objetos.</p>
-<p>Clases y objetos.</p>
-<p>Atributos y métodos.</p>
-<p>Encapsulamiento.</p>
-<p>Herencia.</p>
-<p>Polimorfismo.</p>
-<p>Abstracción.</p>
-<p>Control de acceso (public, private, protected).</p>
-<p>Validación de datos de entrada.</p>
-<p>Introducción a criptografía desde el código.</p>
-<br />
-
-<h2 class="bx--type-expressive-heading-03">HACKING ETICO (FUNDAMENTOS)</h2>
-<p>Introducción a la materia.</p>
-<p>Existen dos posibles escenarios para esta materia; que el maestro enseñe metodologías o que enseñe herramientas específicas, ambas opciones son fiables ya que estas nos brindarán los fundamentos del hacking ético.</p>
-<p>A su vez es importante comprender que esta no es una materia catalogada dentro de ciencia exacta por lo que no esperes ver el uso de herramientas técnicas avanzadas, mucho del hacking radica en aspectos sociales por lo que debemos de entrar a la materia con eso en mente.</p>
-<p>En este semestre también es muy posible que se experimente un entrelazamiento entre materias, a lo que me refiero es que muchas materias comparten temas y es importante conocerlos.</p>
-<p>En el caso de hacking las materias que se entrelazan son: Programación para la creación de scripts automatizaciones y lógica en general.</p>
-<p>Fundamentos de Redes y telecomunicaciones para la comprensión de los ataques de red.</p>
-<p>Gestión de Riesgo y Recuperación de Desastres para la comprensión de la estructura interna de una empresa para la explotación de vulnerabilidades, esto cae sobre el lema “no puedes defender lo que no conoces” por lo que, de igual forma aplica en Hacking “No puedes atacar lo que no conoces”.</p>
-<p>Análisis, Creación y Familiarización de Documentación.</p>
-<br />
-
-<h2 class="bx--type-expressive-heading-03">Aspectos Administrativos</h2>
-<br />
-<h2 class="bx--type-expressive-heading-03">Documentación</h2>
-<p>Un aspecto predominante en esta área (y en muchas otras) es la constante documentación de proyectos, avances y evidencias.</p>
-<p>Por lo que es indispensable apoyarnos de una herramienta de procesamiento de texto (Recomendable usar Google Docs por la facilidad de movimiento entre dispositivos).</p>
-<p>De igual manera acostumbrarnos a estar tomando captura a cualquier hallazgo que hagamos, por más pequeño que sea, necesitamos una ruta trazada de como fué el análisis de vulnerabilidades o pentest en general.</p>
-<br />
-
-<h2 class="bx--type-expressive-heading-03">Aspectos tecnicos</h2>
-<br />
-
-<h2 class="bx--type-expressive-heading-03">Sistemas Operativos</h2>
-<p>Como es común en cada área; en hacking necesitaremos un software específico, sin embargo no será un simple programa de escritorio.</p>
-<p>Necesitaremos un sistema operativo Linux: Se usa Linux en ciberseguridad por su seguridad inherente (permisos granulares, menos malware enfocado en él), flexibilidad y personalización para adaptar el sistema a tareas específicas (hacking ético, forense), la gran cantidad de herramientas de seguridad disponibles (Kali Linux, Metasploit), y porque es la base de la mayoría de los servidores y la infraestructura en la nube, además de ser de código abierto para una auditoría comunitaria constante y ser gratuito.</p>
-<p>Para usar un sistema operativo Linux debemos de entender que linux viene en diferentes “ediciones” denominadas “Flavours” (o sabores en inglés).</p>
-<p>Existen muchos sabores de linux, sin embargo los más populares en ciberseguridad son los siguientes:</p>
-<br />
-<p>Kali: el cual es el que mayormente se usa debido a su variedad de herramientas ya instaladas.</p>
-<p>Parrot: Muy similar a Kali pero con sus ligeras variaciones en estética y estabilidad (siendo más estable que Kali).</p>
-<p>Debian: Kali y Parrot están basados en Debian por lo que ir con esta opción será la más estable debido a que viene “de fabrica” (sin ningun software de ciberseguridad añadido), es la opción más personalizable sin embargo esta versión se aprovecha más si se instala nativa.</p>
-<p>Sistema Operativo Nativo: Algunas personas deciden Particionar su disco y usar una versión de Linux nativamente como sistema operativo principal, esto es buena opción si te quieres familiarizarse con el entorno de GNU/LINUX.</p>
-<p>Sistema Operativo Virtualizado: Esta opción es la mejor en tema de sencillez, solo deberás instalar un software de virtualización (Como recomendación instala VMware, Virtual Box no se utiliza en la industria y es un software bastante inestable).</p>
-<p>Sistema Operativo En Contenedores: Esta también es una opción si gustas meterte al tema de contenedores, solo la menciono para no dejarla de lado, sin embargo nadie de la generación usó esta opción por considerarla algo inestable.</p>
-<br />
-
-<h2 class="bx--type-expressive-heading-03">Resumen (puntos a investigar y recursos)</h2>
-<p>Entender que son los puertos de un dispositivo.</p>
-<p>Identificar que es cada puerto popularmente.</p>
-<p>Realidad y roles que existen en la ciberseguridad (Red team, blue team y purple team).</p>
-<p>La psicología de la manipulación y la ética de trabajar en una empresa.</p>
-<p>Linux y sus sabores.</p>
-<p>Entender cómo trabaja una terminal de linux.</p>
-<p>¿Qué es el HASH?</p>
-<p>Permisos y escalabilidad en linux y sistemas operativos.</p>
-<p>Comandos linux (cd, ls, sudo, etc.).</p>
-<p>Creación de documentación de pentest.</p>
-<p>Instalación de máquinas virtuales.</p>
-<p>Curso de Hacking Gratuito <a href="https://www.netacad.com/es/courses/ethical-hacker?courseLang=en-US"> Proporcionado por cisco </a> </p>
-<br />
-
-<h2 class="bx--type-expressive-heading-03">SISTEMAS OPERATIVOS DISTRIBUIDOS</h2>
-<p>Entender que es un sistema operativo-Cuantos existen y porque hay distintos.</p>
-<p>Historia de linux.</p>
-<p>Cual es la función de un procesador.</p>
-<p>Que es un semáforo en informática.</p>
-<p>Un servidor local.</p>
-<p>Que es una máquina virtual.</p>
-<p>Entender lo que es distribuir los recursos de los procesos.</p>
-<p>Protocolos de comunicación.</p>
-<br />
-
-<h2 class="bx--type-expressive-heading-03">FUNDAMENTOS DE REDES Y TELECOMUNICACIONES</h2>
-<p>Entender cómo es que nuestros dispositivos tienen internet.</p>
-<p>¿Qué es un ISP?</p>
-<p>Qué son los MB/s y Gb/s que nos da la empresa que nos da internet en la casa.</p>
-<p>Que es velocidad de descarga.</p>
-<p>Que es una dirección IPv4 y porque se invento.</p>
-<p>Entender que es un switch.</p>
-<p>Diferencia de un router, switch y HUB.</p>
-<p>¿Qué es un paquete? para qué sirve y donde se va.</p>
-<p>Que es una dirección IPv6 y porqué existe.</p>
-<p>Las empresas proveedores de switches usan sus propias configuraciones.</p>
-<p>Porque cisco es una empresa importante de tecnología.</p>
-<br />
-
-<h2 class="bx--type-expressive-heading-03">LA NUBE COMPUTACIONAL Y LA CIBERSEGURIDAD</h2>
-<p>Cómo funcionan esas empresas famosas como Amazon, IBM, iCloud, microsoft.</p>
-<p>Que es un data center y porque existen mayormente en las empresas de tecnología.</p>
-<p>Cuales son las características, ventajas y desventajas de un data center físico privado.</p>
-<p>¿que es un servicio en la nube? cómo funcionan y porque es un negocio.</p>
-<p>Desventajas y desventajas de tener un data center personal y contratar un servicio en la nube.</p>
-<p>Negocio en el servicio de la nube.</p>
-<p>Curso Gratuito de AWS.</p>
-<br />
-
-<h2 class="bx--type-expressive-heading-03">GESTIÓN DE RIESGOS Y RECUPERACIÓN DE DESASTRES</h2>
-<br />
-<h2 class="bx--type-expressive-heading-03">Introducción</h2>
-<br />
-<p>Esta es una de las materias las cuales convierten esta carrera de ciberseguridad en una licenciatura y no en una ingeniería.</p>
-<p>Una ingeniería se enfoca mucho en los aspectos técnicos.En este caso la licenciatura también se centra en aspectos sociales y administrativos, esto no son aspectos menos importantes, contrario de lo que se cree.</p>
-<p>Tener conocimientos diversos te traerá un panorama amplio el cual te ayudará a resolver muchos problemas en el ámbito de ciberseguridad.</p>
-<br />
-
-<h2 class="bx--type-expressive-heading-03">Orientación de la materia</h2>
-<br />
-<p>En este semestre tenemos una pizca de las diversas áreas de ciberseguridad que existen, en esta materia nos estamos orientando en el área de CSIRT (Computer Security Incident Response Team), área encargada de la respuesta de incidentes de ciberseguridad.</p>
-<br />
-
-<h2 class="bx--type-expressive-heading-03">Consideraciones de la Materia</h2>
-<p>Entiéndase que ciberseguridad es una carrera colectiva, se necesita un colectivo diverso para asegurar bien los activos, por lo que deberás de aprender a trabajar en equipo.</p>
-<p>Esta es una de esas materias donde se te obligará a trabajar en equipo.</p>
-<p>Si eres una persona ansiosa o “penosa”; esta materia te servirá para ir soltándote en estos entornos, en ciberseguridad no hay aportación desperdiciada, todos tienen puntos de vista diferentes de un mismo incidente y esto puede ser el diferenciador entre un incidente menor a un ataque catastrófico.</p>
-<br />
-
-<h2 class="bx--type-expressive-heading-03">Conceptos Básicos</h2>
-<p>En esta área se trabaja mucho con documentación, nos debemos de relacionar con el concepto de “Playbook”: Un playbook es manual o guía que detalla estrategias, procesos y mejores prácticas para estandarizar y optimizar la ejecución de tareas repetitivas en un equipo o empresa.</p>
-<p>Estos son SUPER exactos por lo que debemos de tener una mentalidad analítica en todas las pruebas que se hagan a lo largo del curso.</p>
-<p>Aparte de esto, nos estaremos cruzando mucho con normativas nacionales y sobre todo internacionales, las cuales nos servirán como puntos de partida para la comprensión de cómo funciona la seguridad informática y la respuesta a incidentes.</p>
-<br />
-
-<h2 class="bx--type-expressive-heading-03">ISO 27001</h2>
-<p>Normativa certificable, lo que se refiere a que se puede obtener un certificado para la empresa la cual indica que se está cumpliendo la normativa, aunque de igual manera sirve como una guía o marco de referencia aún si no se cumple con todos los requisitos.</p>
-<br /> 
-
-<h2 class="bx--type-expressive-heading-03">NIST CSF</h2>
-<p>Marco de referencia general sobre ciberseguridad, es flexible y adaptable a cada contexto de cada empresa, este es solo un marco por lo que no hay una certificación, aparte que se basa en un “core” principal siendo cinco funciones claves.</p>
-<p>IDENTIFICAR.</p>
-<p>PROTEGER.</p>
-<p>DETECTAR.</p>
-<p>RESPONDER.</p>
-<p>RECUPERAR.</p>
-<br />
-
-<h2 class="bx--type-expressive-heading-03">NIST SP 800-61 rev.3</h2>
-<p>Esta es una guía más específica de lo que debe realizar el área de CSIRT (establecer y operar un equipo de respuesta a incidentes de seguridad).</p>
-<p>Preparación.</p>
-<p>Detección y Análisis.</p>
-<p>Contención, Erradicación y Recuperación.</p>
-<p>Actividades Post-Incidente.</p>
-<br />
-
-<h2 class="bx--type-expressive-heading-03">Ley federal de protección de datos personales en posesión de particulares</h2>
-<p>Es una ley local recientemente creada en méxico, esta es una ley corta que debe ser bien estudiada para evitar posibles multas o problemas a nive local (México).</p>
-<p>Entender la función de las normas y leyes dentro del ámbito de ciberseguridad.</p>
-<p>Aprender qué frameworks existen y cual es la función de estos.</p>
-<p>Los ataques específicos más famosos de ataques ciberseguridad.</p>
-<p>Certificación CC isc2.</p>
-<br />
-
-<h2 class="bx--type-expressive-heading-03">BASES DE DATOS</h2>
-<p>Tener claro la arquitectura de las computadoras.</p>
-<p>Saber que es un SQL y el porqué de su creación.</p>
-<p>Tipos de Datos.</p>
-<p>Sintaxis SQL.</p>
-<p>Entender un servidor más allá de un switch encendido todo el tiempo recibiendo información.</p>
-<p>Cuantos tipos de bases de datos existen y cuales empresas famosas usan cada una distinta.</p>
-<p>Una introducción como es que se compone una base de datos.</p>
-<p>Entender que es la criptografía y cifrado de datos.</p>
-<br />
-
-   </div>    <!-- ESTE DIV CIERRA LA MATERIA-->
-
-</div><!-- Este div es de todo el Terceer semestre, no copiar hasta aqui  a menos de que quieras copiar todo el semestre -->
-
-    </section>
-    <section id="sem4" class="section">
-      <h2>Cuarto Semestre</h2>
-      <p>Mismos apartados: Videos, PDF y Artículos.</p>
-      <!-- Este semestre apenas esta siendo cursado, Se quedara asi de momento.-->
-
-
-<!-- Espacio de prueba de funciones. Lo ideal es no subir nada aqui -->
- <!-- Sin embargo, podemos probar o dejar aqui funciones que sirvan pero que no tengan lugar. -->
-    </section>
-    <section id="sem5" class="section">
-      <h2>Referencias de Etiquetas para programadores</h2>
-      <div>
-        <h1>This is an h1</h1>
-        <h2>This is an h2</h2>
-        <h3>This is an h3</h3>
-       <h4>This is an h4</h4>
-      <h5>This is an h5</h5>
-      <h6>This is an h6</h6>
-
-  <br />
-  <br />
-
-  <a href="#">This is an a tag</a>
-  <p>This is a p tag</p>
-  <strong>This is a strong tag</strong>
-  <br />
-  <em>This is an em tag</em>
-  </div> 
-          <!-- Pruebas Con Ventana Modal-->
-<button class="bx--btn bx--btn--primary" type="button" data-modal-target="#modal-l6dgz3717cj">Ver ventana</button>
-
-<div data-modal id="modal-l6dgz3717cj" class="bx--modal " role="dialog"
-  aria-modal="true" aria-labelledby="modal-l6dgz3717cj-label" aria-describedby="modal-l6dgz3717cj-heading" tabindex="-1">
-  <div class="bx--modal-container">
-    <div class="bx--modal-header">
-      <p class="bx--modal-header__label bx--type-delta" id="modal-l6dgz3717cj-label">Optional label</p>
-      <p class="bx--modal-header__heading bx--type-beta" id="modal-l6dgz3717cj-heading">Modal heading</p>
-      <button class="bx--modal-close" type="button" data-modal-close aria-label="close modal" >
-        <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bx--modal-close__icon" width="16" height="16" viewBox="0 0 32 32" aria-hidden="true"><path d="M17.4141 16L24 9.4141 22.5859 8 16 14.5859 9.4143 8 8 9.4141 14.5859 16 8 22.5859 9.4143 24 16 17.4141 22.5859 24 24 22.5859 17.4141 16z"></path></svg>
-      </button>
-    </div>
-    <!-- Note: Modals with content that scrolls, at any viewport, requires `tabindex="0"` on the `bx--modal-content` element -->
-
-    <div class="bx--modal-content" tabindex="0">
-      <bold>Esta ventana puede servir para los contenidos, por eso esta aqui </bold>
-
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean id accumsan augue. Phasellus consequat augue
-        vitae
-        tellus tincidunt posuere. Curabitur justo urna, consectetur vel elit iaculis, ultrices condimentum risus. Nulla
-        facilisi.
-        Etiam venenatis molestie tellus. Quisque consectetur non risus eu rutrum. </p>
+      <div class="bx--grid">
+        <div class="bx--row">
+          <div class="bx--col-lg-16">
+            <div style="background: linear-gradient(45deg, #2a0a4d, #161616); padding: 3rem; border-radius: 8px; margin-bottom: 2rem; border: 1px solid #8a3ffc;">
+              <h1 class="bx--type-expressive-heading-05" style="color:white;">Comunidad <span style="color:#8a3ffc;">CELC-CUGDL</span></h1>
+              <p class="bx--type-body-long-02" style="margin-top: 1rem; color: #d0d0d0;">
+                Recursos centralizados, guías de supervivencia y material de apoyo para la Licenciatura en Ciberseguridad.
+                Hecho por estudiantes, para estudiantes.
+              </p>
+            </div>
+            
+            <h3 class="bx--type-expressive-heading-03">Novedades</h3>
+            <p>Versión Beta 2.0 - Estructura separada (HTML + CSS) implementada.</p>
           </div>
-    <div class="bx--modal-content--overflow-indicator"></div>
-
-    <div class="bx--modal-footer">
-      <button class="bx--btn bx--btn--secondary" type="button" data-modal-close>Secondary button</button>
-      <button class="bx--btn bx--btn--primary" type="button"   data-modal-primary-focus>Primary button</button>
-    </div>
-  </div>
-  <!-- Note: focusable span allows for focus wrap feature within Modals -->
-  <span tabindex="0"></span>
-</div>
-        <!-- Final de la ventana modal -->
-  
-</section>
-
-    <section id="sem6" class="section">
-      <h2>Mini manuales de supervivencia.</h2>
-      <p>Mismos apartados: Videos, PDF y Artículos.</p>
-    
+        </div>
+      </div>
     </section>
 
-    <!-- Pruebas FOOTER-->
-    <footer class="ibm-footer">
-  <div class="bx--grid">
-    <div class="bx--row">
-
-      <!-- Logo -->
-      <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
-        <img src="./imagenes/celclogo.png" alt="CELC" class="footer-logo">
+    <section id="sem1" class="section">
+      <div class="semester-header">
+        <nav class="bx--breadcrumb bx--breadcrumb--no-trailing-slash">
+          <div class="bx--breadcrumb-item"><a href="#" onclick="showSection('bienvenida')">Inicio</a></div>
+          <div class="bx--breadcrumb-item"><span>Primer Semestre</span></div>
+        </nav>
+        <h1 class="bx--type-expressive-heading-04">Primer Semestre</h1>
+        
+        <div class="bx--tabs bx--tabs--contained">
+          <ul class="bx--tabs__nav" role="tablist">
+            <li class="bx--tabs__nav-item bx--tabs__nav-item--selected">
+              <button class="bx--tabs__nav-link" onclick="showMateria('sem1-mat1', this)">Matemáticas 1</button>
+            </li>
+            <li class="bx--tabs__nav-item">
+              <button class="bx--tabs__nav-link" onclick="showMateria('sem1-mat2', this)">Bases de Datos</button>
+            </li>
+            <li class="bx--tabs__nav-item">
+              <button class="bx--tabs__nav-link" onclick="showMateria('sem1-mat3', this)">Álgebra Lineal</button>
+            </li>
+          </ul>
+        </div>
       </div>
 
-      <!-- Cosas de la comunidad -->
-      <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-2">
-        <h4 class="footer-title">Unetenos, unete a: CELC</h4>
-        <ul class="footer-list">
-          <li><a href="#">Discord</a></li>
-          <li><a href="#">Chat de Whatsapp</a></li>
-          <li><a href="#">Instagram</a></li>
-        </ul>
+      <div class="materia active" id="sem1-mat1">
+        <h3 style="margin-bottom:1.5rem;">Matemáticas 1: Fundamentos</h3>
+        <div class="bx--grid">
+          <div class="bx--row">
+            <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+              <a href="#" class="bx--tile bx--tile--clickable resource-tile">
+                <p class="bx--tile__title">Libro Baldor PDF</p>
+                <p class="bx--tile__text">El clásico de clásicos para álgebra básica.</p>
+                <span class="bx--tag bx--tag--blue">PDF</span>
+              </a>
+            </div>
+             <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+              <a href="#" class="bx--tile bx--tile--clickable resource-tile">
+                <p class="bx--tile__title">Clase Grabada: Funciones</p>
+                <p class="bx--tile__text">Explicación del profe X sobre límites.</p>
+                <span class="bx--tag bx--tag--green">Video</span>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <!-- Equipo de contenidos-->
-      <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-2">
-        <h4 class="footer-title">Contenidos de la pagina</h4>
-        <ul class="footer-list">
-          <li><a href="#">Espacio</a></li>
-          <li><a href="#">Espacio</a></li>
-          <li><a href="#">Espacio</a></li>
-          <li><a href="#">Espacio</a></li>
-        </ul>
+      <div class="materia" id="sem1-mat2">
+        <h3>Bases de Datos</h3>
+        <p>Contenido pendiente...</p>
+      </div>
+      
+       <div class="materia" id="sem1-mat3">
+        <h3>Algebra Lineal</h3>
+        <p>Contenido pendiente...</p>
+      </div>
+    </section>
+
+    <section id="sem2" class="section">
+      <div class="semester-header">
+        <nav class="bx--breadcrumb">
+          <div class="bx--breadcrumb-item"><a href="#" onclick="showSection('bienvenida')">Inicio</a></div>
+          <div class="bx--breadcrumb-item"><span>Segundo Semestre</span></div>
+        </nav>
+        <h1 class="bx--type-expressive-heading-04">Segundo Semestre</h1>
+        <div class="bx--tabs bx--tabs--contained">
+          <ul class="bx--tabs__nav" role="tablist">
+            <li class="bx--tabs__nav-item bx--tabs__nav-item--selected">
+              <button class="bx--tabs__nav-link" onclick="showMateria('sem2-mat1', this)">Programación 1</button>
+            </li>
+            <li class="bx--tabs__nav-item">
+              <button class="bx--tabs__nav-link" onclick="showMateria('sem2-mat2', this)">Ética y Resp.</button>
+            </li>
+          </ul>
+        </div>
       </div>
 
-      <!-- Equipo de programacion -->
-      <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-2">
-        <h4 class="footer-title">Equipo de Programacion</h4>
-        <ul class="footer-list">
-          <li><a href="#">Arturo Sandoval</a></li>
-          <li><a href="#">Espacio</a></li>
-          <li><a href="#">Espacio</a></li>
-          <li><a href="#">Espacio</a></li>
-        </ul>
+      <div class="materia active" id="sem2-mat1">
+        <h3>Programación 1: C++ / Python</h3>
+        <div class="bx--grid">
+            <div class="bx--row">
+              <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+                <a href="#" class="bx--tile bx--tile--clickable resource-tile">
+                  <p class="bx--tile__title">Lógica de Punteros</p>
+                  <p class="bx--tile__text">Guía rápida para no morir con punteros en C++.</p>
+                  <span class="bx--tag bx--tag--purple">Guía</span>
+                </a>
+              </div>
+            </div>
+        </div>
       </div>
-            <!-- Difusion de este proyecto -->
-      <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-2">
-        <h4 class="footer-title">Difusion de la WEB</h4>
-        <ul class="footer-list">
-          <li><a href="#">Espacio</a></li>
-          <li><a href="#">Espacio</a></li>
-          <li><a href="#">Espacio</a></li>
-          <li><a href="#">Espacio</a></li>
-        </ul>
+      
+      <div class="materia" id="sem2-mat2">
+          <h3>Ética</h3>
+          <p>Pendiente</p>
       </div>
-    </div>
+    </section>
 
-    <!-- Línea inferior -->
-    <div class="bx--row footer-bottom">
-      <div class="bx--col">
-        <p class="footer-copy">
-          © 2025 CELC-CUGDL· Inspirado en IBM Carbon Design System
-        </p>
+    <section id="sem3" class="section">
+         <div class="semester-header">
+        <nav class="bx--breadcrumb">
+          <div class="bx--breadcrumb-item"><a href="#" onclick="showSection('bienvenida')">Inicio</a></div>
+          <div class="bx--breadcrumb-item"><span>Tercer Semestre</span></div>
+        </nav>
+        <h1 class="bx--type-expressive-heading-04">Tercer Semestre (Core Cybersec)</h1>
+        <div class="bx--tabs bx--tabs--contained">
+          <ul class="bx--tabs__nav" role="tablist">
+            <li class="bx--tabs__nav-item bx--tabs__nav-item--selected">
+              <button class="bx--tabs__nav-link" onclick="showMateria('sem3-mat2', this)">Hacking Ético</button>
+            </li>
+             <li class="bx--tabs__nav-item">
+              <button class="bx--tabs__nav-link" onclick="showMateria('sem3-mat8', this)">Guía General</button>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </div>
-</footer>
+      
+      <div class="materia active" id="sem3-mat2">
+          <h2 class="bx--type-expressive-heading-03">Hacking Ético: Fundamentos</h2>
+          <br>
+          <div class="bx--grid">
+              <div class="bx--row">
+                <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+                  <a href="https://www.kali.org/" target="_blank" class="bx--tile bx--tile--clickable resource-tile">
+                    <p class="bx--tile__title">Kali Linux Official</p>
+                    <p class="bx--tile__text">Descarga la ISO oficial para máquinas virtuales.</p>
+                    <span class="bx--tag bx--tag--red">Herramienta</span>
+                  </a>
+                </div>
+                 <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+                  <a href="#" class="bx--tile bx--tile--clickable resource-tile">
+                    <p class="bx--tile__title">Manual de Nmap</p>
+                    <p class="bx--tile__text">Comandos básicos para escaneo de puertos.</p>
+                    <span class="bx--tag bx--tag--blue">PDF</span>
+                  </a>
+                </div>
+              </div>
+          </div>
+      </div>
 
-<!-- Fin de Pruebas FOOTER-->
+      <div class="materia" id="sem3-mat8">
+           <div class="bx--grid">
+               <div class="bx--row">
+                   <div class="bx--col-lg-12">
+                       <h2 class="bx--type-expressive-heading-03" style="color:#be95ff">Introducción al 3er Semestre</h2>
+                       <p class="bx--type-body-long-01" style="margin-bottom:1rem;">
+                           Este es el semestre donde entramos de lleno a Ciberseguridad. 
+                           Investigar: Inglés, Conceptos de CS, Programación Orientada a Objetos.
+                       </p>
+                       <h4 style="margin-top:2rem;">Recursos Rápidos:</h4>
+                       <ul class="bx--list--unordered">
+                           <li class="bx--list__item">ISO 27001 y NIST CSF (Lectura obligatoria)</li>
+                           <li class="bx--list__item">Virtualización (VMware > VirtualBox en estabilidad)</li>
+                           <li class="bx--list__item">Sistemas Operativos: Debian/Kali/Parrot</li>
+                       </ul>
+                   </div>
+               </div>
+           </div>
+      </div>
+    </section>
+    
+    <section id="sem5" class="section">
+        <h2>Referencias para Programadores</h2>
+        <p>Aquí pondremos los Cheatsheets de Git, Linux, C++, Python.</p>
+        <button class="bx--btn bx--btn--primary">Ver Cheatsheet Linux</button>
+    </section>
+
+    <footer class="ibm-footer" id="main-footer">
+      <div class="bx--grid">
+        <div class="bx--row">
+          <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+            <h4 class="footer-title">CELC - CUGDL</h4>
+            <p style="color:#8d8d8d; font-size:0.8rem;">Centralizando el conocimiento.</p>
+          </div>
+          <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-2">
+            <h4 class="footer-title">Comunidad</h4>
+            <ul class="footer-list">
+              <li><a href="#">Discord</a></li>
+              <li><a href="#">WhatsApp</a></li>
+            </ul>
+          </div>
+           <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-2">
+            <h4 class="footer-title">Créditos</h4>
+            <ul class="footer-list">
+              <li><a href="#">Equipo de Devs</a></li>
+              <li><a href="#">IBM Carbon Design</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="bx--row footer-bottom" style="margin-top:2rem; padding-top:1rem; border-top:1px solid #333;">
+          <div class="bx--col">
+            <p class="footer-copy" style="font-size:0.75rem; color:#666;">© 2026 CELC-CUGDL</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
   </main>
 
-  <!-- Scripts -->
-    <!-- Script original  https://unpkg.com/carbon-components/scripts/carbon-components.min.js-->
   <script src="https://unpkg.com/carbon-components/scripts/carbon-components.js"></script>
-    <script>
+  <script>
+    /* LOGICA DE JAVASCRIPT (Funcionalidad) */
+
+    // 1. Navegación de Secciones (Sidebar)
     function showSection(id) {
       document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
-      document.getElementById(id).classList.add('active');
-    }
-    // El script es para ocultar el footer en la seccion de bienvenida, pero no funciona. De igual manera el footer se ve bien. Dejemoslo asi.
-    const footer = document.getElementById('main-footer');
-    if (id === 'bienvenida') {
-      footer.style.display = 'none';
-    } else {
-      footer.style.display = 'block';
+      const target = document.getElementById(id);
+      if(target) target.classList.add('active');
     }
 
+    // 2. Navegación de Materias (Tabs internas)
+    function showMateria(id, btn) {
+      const parentSection = btn.closest('section');
+      parentSection.querySelectorAll('.materia').forEach(m => m.classList.remove('active'));
+      
+      const targetMateria = document.getElementById(id);
+      if(targetMateria) targetMateria.classList.add('active');
+
+      btn.closest('.bx--tabs__nav')
+         .querySelectorAll('.bx--tabs__nav-item')
+         .forEach(t => t.classList.remove('bx--tabs__nav-item--selected'));
+      
+      btn.parentElement.classList.add('bx--tabs__nav-item--selected');
+    }
+
+    // 3. Acordeón del Sidebar
     function toggleAccordion(btn) {
       btn.parentElement.classList.toggle('bx--accordion__item--active');
     }
+    
+    // 4. Menú Móvil
+    function toggleSidebar() {
+      document.getElementById('mainSidebar').classList.toggle('open');
+    }
+    
+    function closeSidebarMobile() {
+      if (window.innerWidth <= 768) {
+        document.getElementById('mainSidebar').classList.remove('open');
+      }
+    }
   </script>
-  <script>
-function showMateria(id, btn) {
-  // Ocultar materias del semestre actual
-  btn.closest('section')
-     .querySelectorAll('.materia')
-     .forEach(m => m.classList.remove('active'));
-
-  document.getElementById(id).classList.add('active');
-
-  // Tabs activas
-  btn.closest('.bx--tabs__nav')
-     .querySelectorAll('.bx--tabs__nav-item')
-     .forEach(t => t.classList.remove('bx--tabs__nav-item--selected'));
-
-  btn.parentElement.classList.add('bx--tabs__nav-item--selected');
-}
-</script>
 </body>
-</html> 
+</html>

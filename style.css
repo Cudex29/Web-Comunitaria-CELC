@@ -1,0 +1,297 @@
+/* =========================================
+   PROYECTO: Web Comunitaria CELC
+   TEMA: Carbon Design System - Cyberpunk (Purple/Dark)
+   ========================================= */
+
+/* 1. VARIABLES & CONFIGURACIÓN GLOBAL */
+:root {
+    /* Paleta de Colores Personalizada (Morado & Negro) */
+    --primary-color: #8a3ffc;       /* Morado Principal (Purple 60) */
+    --primary-hover: #6929c4;       /* Morado Oscuro para hover */
+    --accent-color: #be95ff;        /* Morado Claro (Texto/Enlaces) */
+    --bg-body: #161616;             /* Negro Mate (Fondo principal) */
+    --bg-sidebar: #121212;          /* Negro Profundo (Sidebar/Footer) */
+    --bg-card: #262626;             /* Gris Oscuro (Tarjetas) */
+    --text-main: #f4f4f4;           /* Blanco Humo */
+    --text-muted: #c6c6c6;          /* Gris Claro */
+    --border-color: #393939;        /* Color de líneas divisorias */
+    
+    /* Dimensiones */
+    --sidebar-width: 280px;
+}
+
+/* Reset básico y Tipografía */
+body {
+    font-family: 'IBM Plex Sans', sans-serif; /* Fuente técnica oficial */
+    background-color: var(--bg-body);
+    color: var(--text-main);
+    margin: 0;
+    display: flex;
+    min-height: 100vh;
+    overflow-x: hidden; /* Evita scroll horizontal */
+}
+
+/* Sobrescribir estilos por defecto de Carbon para enlaces */
+a, .bx--link {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+a:hover {
+    color: var(--primary-color);
+}
+
+/* =========================================
+   2. LAYOUT (ESTRUCTURA)
+   ========================================= */
+
+/* Barra Lateral (Sidebar) */
+.sidebar {
+    width: var(--sidebar-width);
+    background-color: var(--bg-sidebar);
+    border-right: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    position: fixed; /* Siempre visible al hacer scroll */
+    height: 100vh;
+    overflow-y: auto; /* Scroll interno si hay muchas materias */
+    z-index: 1000;
+    transition: transform 0.3s cubic-bezier(0.2, 0, 0.38, 0.9);
+}
+
+/* Títulos dentro del Sidebar */
+.sidebar h2 {
+    padding: 1.5rem 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--accent-color);
+    text-transform: uppercase;
+    margin: 0;
+}
+
+/* Área de Contenido Principal */
+.content {
+    flex: 1;
+    margin-left: var(--sidebar-width); /* Deja espacio para el sidebar */
+    padding: 2rem 2rem 4rem 2rem; /* Top, Right, Bottom, Left */
+    background-color: var(--bg-body);
+    transition: margin-left 0.3s ease;
+}
+
+/* Footer */
+.ibm-footer {
+    border-top: 1px solid var(--border-color);
+    background-color: var(--bg-sidebar);
+    padding: 3rem 0;
+    margin-top: 4rem;
+}
+
+.footer-title {
+    color: var(--accent-color);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.footer-list {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-list li {
+    margin-bottom: 0.5rem;
+}
+
+/* =========================================
+   3. COMPONENTES UI (DISEÑO)
+   ========================================= */
+
+/* --- OVERRIDES DE CARBON (Forzando el Morado) --- */
+
+/* Botones Primarios */
+.bx--btn--primary {
+    background-color: var(--primary-color) !important;
+}
+.bx--btn--primary:hover {
+    background-color: var(--primary-hover) !important;
+}
+
+/* Acordeón (Menú desplegable) */
+.bx--accordion__heading {
+    background-color: var(--bg-sidebar);
+}
+.bx--accordion__heading:hover {
+    background-color: #262626;
+}
+.bx--accordion__title {
+    color: var(--text-main);
+}
+/* La línea azul del focus en Carbon la cambiamos a blanco/morado */
+.bx--accordion__heading:focus::before {
+    border-color: var(--primary-color);
+}
+
+/* Tabs (Pestañas de materias) */
+.bx--tabs__nav {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.bx--tabs__nav-item--selected .bx--tabs__nav-link, 
+.bx--tabs__nav-item--selected .bx--tabs__nav-link:focus {
+    color: var(--accent-color);
+    border-bottom-color: var(--primary-color); /* La línea morada debajo de la tab activa */
+}
+.bx--tabs__nav-link {
+    color: var(--text-muted);
+}
+.bx--tabs__nav-link:hover {
+    color: var(--text-main);
+}
+
+/* --- ELEMENTOS PERSONALIZADOS --- */
+
+/* Tiles / Tarjetas de Recursos (Efecto Neon) */
+.resource-tile {
+    height: 100%;
+    background-color: var(--bg-card);
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: block;
+    padding: 1rem;
+}
+
+.resource-tile:hover {
+    background-color: #353535;
+    border-color: var(--primary-color);
+    /* El "Glow" morado */
+    box-shadow: 0 0 15px rgba(138, 63, 252, 0.25); 
+    transform: translateY(-4px); /* Se levanta un poco */
+}
+
+.bx--tile__title {
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.bx--tile__text {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+/* Etiquetas (Tags) Personalizadas */
+.bx--tag--purple { background-color: #6929c4; color: #fff; }
+.bx--tag--blue   { background-color: #0043ce; color: #fff; }
+
+/* Botón de Bienvenida (Inicio) */
+.welcome-btn {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-left: 4px solid transparent;
+    color: #ffffff;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    font-size: 0.875rem;
+    transition: all 0.2s;
+}
+
+.welcome-btn:hover {
+    background-color: #262626;
+    border-left-color: var(--primary-color);
+}
+
+.welcome-icon {
+    width: 16px;
+    height: 16px;
+    filter: invert(1); /* Vuelve blanco el icono negro */
+}
+
+/* Encabezado de Semestre */
+.semester-header {
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+}
+.semester-header h1 {
+    color: var(--accent-color);
+}
+
+/* =========================================
+   4. ANIMACIONES & UTILIDADES
+   ========================================= */
+
+/* Clases para mostrar/ocultar JS */
+.section { display: none; opacity: 0; }
+.section.active { 
+    display: block; 
+    animation: fadeIn 0.4s ease-in-out forwards; 
+}
+
+.materia { display: none; opacity: 0; }
+.materia.active { 
+    display: block; 
+    animation: slideUp 0.3s ease-in-out forwards; 
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(15px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Botón Menú Hamburguesa (Móvil) */
+.menu-toggle { 
+    display: none; /* Oculto en PC */
+}
+
+/* =========================================
+   5. RESPONSIVE DESIGN (MÓVIL)
+   ========================================= */
+
+@media (max-width: 768px) {
+    /* Sidebar oculto por defecto */
+    .sidebar {
+        transform: translateX(-100%);
+        box-shadow: 5px 0 15px rgba(0,0,0,0.5);
+    }
+    
+    /* Clase que agrega JS para mostrarlo */
+    .sidebar.open {
+        transform: translateX(0);
+    }
+
+    /* Ajustar contenido */
+    .content {
+        margin-left: 0;
+        padding: 1rem;
+        padding-top: 4.5rem; /* Espacio para el botón de menú */
+    }
+    
+    /* Mostrar botón menú */
+    .menu-toggle {
+        display: block;
+        position: fixed;
+        top: 1rem;
+        left: 1rem;
+        z-index: 2000;
+        background: var(--bg-sidebar);
+        border: 1px solid var(--primary-color);
+        color: white;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        font-weight: bold;
+        border-radius: 4px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    }
+    
+}

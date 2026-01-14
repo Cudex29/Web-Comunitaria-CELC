@@ -94,20 +94,27 @@
         </nav>
         <h1 class="bx--type-expressive-heading-04">Primer Semestre</h1>
         
-        <div class="bx--tabs bx--tabs--contained">
-          <ul class="bx--tabs__nav" role="tablist">
-            <li class="bx--tabs__nav-item bx--tabs__nav-item--selected">
-              <button class="bx--tabs__nav-link" onclick="showMateria('sem1-mat1', this)">Matemáticas 1</button>
-            </li>
-            <li class="bx--tabs__nav-item">
-              <button class="bx--tabs__nav-link" onclick="showMateria('sem1-mat2', this)">Bases de Datos</button>
-            </li>
-            <li class="bx--tabs__nav-item">
-              <button class="bx--tabs__nav-link" onclick="showMateria('sem1-mat3', this)">Álgebra Lineal</button>
-            </li>
-          </ul>
-        </div>
-      </div>
+          <div class="tabs-carbon-custom">
+  <div class="tabs-scroll">
+    <button class="bx--tabs__nav-link is-active"
+            onclick="showMateria('sem1-mat1', this)">
+      Matemáticas 1
+    </button>
+
+    <button class="bx--tabs__nav-link"
+            onclick="showMateria('sem1-mat2', this)">
+      Bases de Datos
+    </button>
+
+    <button class="bx--tabs__nav-link"
+            onclick="showMateria('sem1-mat3', this)">
+      Álgebra Lineal
+    </button>
+
+  </div>
+</div>
+</div>
+
 
       <div class="materia active" id="sem1-mat1">
         <h3 style="margin-bottom:1.5rem;">Matemáticas 1: Fundamentos</h3>
@@ -149,16 +156,21 @@
           <div class="bx--breadcrumb-item"><span>Segundo Semestre</span></div>
         </nav>
         <h1 class="bx--type-expressive-heading-04">Segundo Semestre</h1>
-        <div class="bx--tabs bx--tabs--contained">
-          <ul class="bx--tabs__nav" role="tablist">
-            <li class="bx--tabs__nav-item bx--tabs__nav-item--selected">
-              <button class="bx--tabs__nav-link" onclick="showMateria('sem2-mat1', this)">Programación 1</button>
-            </li>
-            <li class="bx--tabs__nav-item">
-              <button class="bx--tabs__nav-link" onclick="showMateria('sem2-mat2', this)">Ética y Resp.</button>
-            </li>
-          </ul>
-        </div>
+<div class="tabs-carbon-custom">
+  <div class="tabs-scroll">
+
+    <button class="bx--tabs__nav-link is-active"
+            onclick="showMateria('sem2-mat1', this)">
+      Programación 1
+    </button>
+
+    <button class="bx--tabs__nav-link"
+            onclick="showMateria('sem2-mat2', this)">
+      Ética y Resp.
+    </button>
+
+  </div>
+</div>
       </div>
 
       <div class="materia active" id="sem2-mat1">
@@ -189,18 +201,79 @@
           <div class="bx--breadcrumb-item"><span>Tercer Semestre</span></div>
         </nav>
         <h1 class="bx--type-expressive-heading-04">Tercer Semestre (Core Cybersec)</h1>
-        <div class="bx--tabs bx--tabs--contained">
-          <ul class="bx--tabs__nav" role="tablist">
-            <li class="bx--tabs__nav-item bx--tabs__nav-item--selected">
-              <button class="bx--tabs__nav-link" onclick="showMateria('sem3-mat2', this)">Hacking Ético</button>
-            </li>
-             <li class="bx--tabs__nav-item">
-              <button class="bx--tabs__nav-link" onclick="showMateria('sem3-mat8', this)">Guía General</button>
-            </li>
-          </ul>
-        </div>
+<div class="tabs-carbon-custom">
+  <div class="tabs-scroll">
+
+    <button class="bx--tabs__nav-link is-active"
+        onclick="showMateria('sem3-mat1', this)">
+      Programación 2
+    </button>
+
+    <button class="bx--tabs__nav-link"
+        onclick="showMateria('sem3-mat2', this)">
+      Hacking Ético
+    </button>
+
+    <button class="bx--tabs__nav-link"
+        onclick="showMateria('sem3-mat3', this)">
+      Sistemas Operativos
+    </button>
+
+    <button class="bx--tabs__nav-link"
+        onclick="showMateria('sem3-mat4', this)">
+      Redes y Telecomunicaciones
+    </button>
+
+    <button class="bx--tabs__nav-link"
+        onclick="showMateria('sem3-mat5', this)">
+      Gestión de Riesgos
+    </button>
+
+    <button class="bx--tabs__nav-link"
+        onclick="showMateria('sem3-mat6', this)">
+      La Nube Computacional
+    </button>
+
+    <button class="bx--tabs__nav-link"
+        onclick="showMateria('sem3-mat7', this)">
+      Bases de Datos
+    </button>
+
+    <button class="bx--tabs__nav-link"
+            onclick="showMateria('sem3-mat8', this)">
+      Guía General
+    </button>
+
+  </div>
+</div>
       </div>
       
+      <div class="materia active" id="sem3-mat1">
+          <h2 class="bx--type-expressive-heading-03">Programacion 2</h2>
+          <br>
+          <div class="bx--grid">
+              <div class="bx--row">
+
+                <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+                  <a href="https://www.kali.org/" target="_blank" class="bx--tile bx--tile--clickable resource-tile">
+                    <p class="bx--tile__title">Titulo</p>
+                    <p class="bx--tile__text">Descripcion</p>
+                    <span class="bx--tag bx--tag--purple">TIPO</span>
+                  </a>
+                </div>
+
+                <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+                  <a href="https://www.kali.org/" target="_blank" class="bx--tile bx--tile--clickable resource-tile">
+                    <p class="bx--tile__title">Titulo</p>
+                    <p class="bx--tile__text">Descripcion</p>
+                    <span class="bx--tag bx--tag--purple">TIPO</span>
+                  </a>
+                </div>
+
+              </div> <!-- FIN ROW -->
+          </div>  <!-- FIN GRID -->
+      </div> <!-- FIN MATERIA1 -->
+
       <div class="materia active" id="sem3-mat2">
           <h2 class="bx--type-expressive-heading-03">Hacking Ético: Fundamentos</h2>
           <br>
@@ -210,16 +283,58 @@
                   <a href="https://www.kali.org/" target="_blank" class="bx--tile bx--tile--clickable resource-tile">
                     <p class="bx--tile__title">Kali Linux Official</p>
                     <p class="bx--tile__text">Descarga la ISO oficial para máquinas virtuales.</p>
-                    <span class="bx--tag bx--tag--red">Herramienta</span>
+                    <span class="bx--tag bx--tag--purple">Herramienta</span>
                   </a>
                 </div>
+
                  <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
-                  <a href="#" class="bx--tile bx--tile--clickable resource-tile">
-                    <p class="bx--tile__title">Manual de Nmap</p>
-                    <p class="bx--tile__text">Comandos básicos para escaneo de puertos.</p>
+                  <a href="https://www.youtube.com/watch?v=oBtJ7bryKII" class="bx--tile bx--tile--clickable resource-tile">
+                    <p class="bx--tile__title">LLenado reporte pentest</p>
+                    <p class="bx--tile__text">Como llenar un reporte de pentesting</p>
+                    <span class="bx--tag bx--tag--red">Video</span>
+                  </a>
+                </div>
+
+                 <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+                  <a href="https://listings.pcisecuritystandards.org/documents/Penetration-Testing-Guidance-v1_1.pdf" class="bx--tile bx--tile--clickable resource-tile">
+                    <p class="bx--tile__title">Estandares de pentesting</p>
+                    <p class="bx--tile__text">Guia de pentesting - Security Standards Council</p>
                     <span class="bx--tag bx--tag--blue">PDF</span>
                   </a>
                 </div>
+
+                 <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+                  <a href="https://www.netacad.com/es/courses/ethical-hacker?courseLang=en-US" class="bx--tile bx--tile--clickable resource-tile">
+                    <p class="bx--tile__title">Hacking Etico</p>
+                    <p class="bx--tile__text">Curso de CISCO</p>
+                    <span class="bx--tag bx--tag--green">Curso</span>
+                  </a>
+                </div>
+
+                 <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+                  <a href="https://www.youtube.com/watch?v=r_xN-vzJnxA" class="bx--tile bx--tile--clickable resource-tile">
+                    <p class="bx--tile__title">Kali en una VM</p>
+                    <p class="bx--tile__text">Como instalar Kali Linux en VMware</p>
+                    <span class="bx--tag bx--tag--red">Video</span>
+                  </a>
+                </div>
+
+                 <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+                  <a href="https://www.youtube.com/watch?v=NIQZOviElSU" class="bx--tile bx--tile--clickable resource-tile">
+                    <p class="bx--tile__title">Linux en 100 segundos</p>
+                    <p class="bx--tile__text">Que es linux y como funciona</p>
+                    <span class="bx--tag bx--tag--red">Video</span>
+                  </a>
+                </div>
+
+                 <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+                  <a href="https://overthewire.org/wargames/" class="bx--tile bx--tile--clickable resource-tile">
+                    <p class="bx--tile__title">OverTheWire Wargames</p>
+                    <p class="bx--tile__text">Juegos para aprender hacking ético</p>
+                    <span class="bx--tag bx--tag--purple">Herramienta</span>
+                  </a>
+                </div>
+
               </div>
           </div>
       </div>
@@ -228,18 +343,82 @@
            <div class="bx--grid">
                <div class="bx--row">
                    <div class="bx--col-lg-12">
-                       <h2 class="bx--type-expressive-heading-03" style="color:#be95ff">Introducción al 3er Semestre</h2>
-                       <p class="bx--type-body-long-01" style="margin-bottom:1rem;">
-                           Este es el semestre donde entramos de lleno a Ciberseguridad. 
-                           Investigar: Inglés, Conceptos de CS, Programación Orientada a Objetos.
-                       </p>
-                       <h4 style="margin-top:2rem;">Recursos Rápidos:</h4>
-                       <ul class="bx--list--unordered">
-                           <li class="bx--list__item">ISO 27001 y NIST CSF (Lectura obligatoria)</li>
-                           <li class="bx--list__item">Virtualización (VMware > VirtualBox en estabilidad)</li>
-                           <li class="bx--list__item">Sistemas Operativos: Debian/Kali/Parrot</li>
-                       </ul>
-                   </div>
+   <h2 class="bx--type-expressive-heading-03">Introducción a tercer semestre</h2>
+   <p class="bx--tile__text">El tercer semestre, el semestre donde se entra de lleno a aspectos de ciberseguridad, es el semestre que desde el primer día se espera con ansias.
+     algunas personas llegan a este semestre con conocimientos extensos, otros llegan con conocimientos muy por encima y otros llegan en ceros
+     , esta guía servirá para todas las personas que por mucho o poco conocimiento tengan necesiten una guía para no estar perdidos en el semestre. 
+</p>
+   <br />
+  <h2 class="bx--type-expressive-heading-03">Resumen del semestre</h2>
+  <p class="bx--tile__text">Investigar: <br />
+    Ingles <br />
+    Curso para comprender conceptos básicos de Ciencias Computacionales en dado caso de partir desde cero <br />
+    <br />
+
+<h2 class="bx--type-expressive-heading-03">PROGRAMACIÓN II</h2>
+<p class="bx--tile__text">Fundamentos de Programación Orientada a Objetos.</p>
+<p class="bx--tile__text">Clases y objetos.</p>
+<p class="bx--tile__text">Atributos y métodos.</p>
+<p class="bx--tile__text">Encapsulamiento.</p>
+<p class="bx--tile__text">Herencia.</p>
+<p class="bx--tile__text">Polimorfismo.</p>
+<p class="bx--tile__text">Abstracción.</p>
+<p class="bx--tile__text">Control de acceso (public, private, protected).</p>
+<p class="bx--tile__text">Validación de datos de entrada.</p>
+<p class="bx--tile__text">Introducción a criptografía desde el código.</p>
+<br />
+
+<h2 class="bx--type-expressive-heading-03">HACKING ETICO (FUNDAMENTOS)</h2>
+<p class="bx--tile__text">Introducción a la materia.</p>
+<p class="bx--tile__text">Existen dos posibles escenarios para esta materia; que el maestro enseñe metodologías o que enseñe herramientas específicas, ambas opciones son fiables ya que estas nos brindarán los fundamentos del hacking ético.</p>
+<p class="bx--tile__text">A su vez es importante comprender que esta no es una materia catalogada dentro de ciencia exacta por lo que no esperes ver el uso de herramientas técnicas avanzadas, mucho del hacking radica en aspectos sociales por lo que debemos de entrar a la materia con eso en mente.</p>
+<p class="bx--tile__text">En este semestre también es muy posible que se experimente un entrelazamiento entre materias, a lo que me refiero es que muchas materias comparten temas y es importante conocerlos.</p>
+<p class="bx--tile__text">En el caso de hacking las materias que se entrelazan son: Programación para la creación de scripts automatizaciones y lógica en general.</p>
+<p class="bx--tile__text">Fundamentos de Redes y telecomunicaciones para la comprensión de los ataques de red.</p>
+<p class="bx--tile__text">Gestión de Riesgo y Recuperación de Desastres para la comprensión de la estructura interna de una empresa para la explotación de vulnerabilidades, esto cae sobre el lema “no puedes defender lo que no conoces” por lo que, de igual forma aplica en Hacking “No puedes atacar lo que no conoces”.</p>
+<p class="bx--tile__text">Análisis, Creación y Familiarización de Documentación.</p>
+<br />
+
+<h2 class="bx--type-expressive-heading-03">Aspectos Administrativos</h2>
+<br />
+<h2 class="bx--type-expressive-heading-03">Documentación</h2>
+<p class="bx--tile__text">Un aspecto predominante en esta área (y en muchas otras) es la constante documentación de proyectos, avances y evidencias.</p>
+<p class="bx--tile__text">Por lo que es indispensable apoyarnos de una herramienta de procesamiento de texto (Recomendable usar Google Docs por la facilidad de movimiento entre dispositivos).</p>
+<p class="bx--tile__text">De igual manera acostumbrarnos a estar tomando captura a cualquier hallazgo que hagamos, por más pequeño que sea, necesitamos una ruta trazada de como fué el análisis de vulnerabilidades o pentest en general.</p>
+<br />
+
+<h2 class="bx--type-expressive-heading-03">Aspectos tecnicos</h2>
+<br />
+
+<h2 class="bx--type-expressive-heading-03">Sistemas Operativos</h2>
+<p class="bx--tile__text">Como es común en cada área; en hacking necesitaremos un software específico, sin embargo no será un simple programa de escritorio.</p>
+<p class="bx--tile__text">Necesitaremos un sistema operativo Linux: Se usa Linux en ciberseguridad por su seguridad inherente (permisos granulares, menos malware enfocado en él), flexibilidad y personalización para adaptar el sistema a tareas específicas (hacking ético, forense), la gran cantidad de herramientas de seguridad disponibles (Kali Linux, Metasploit), y porque es la base de la mayoría de los servidores y la infraestructura en la nube, además de ser de código abierto para una auditoría comunitaria constante y ser gratuito.</p>
+<p class="bx--tile__text">Para usar un sistema operativo Linux debemos de entender que linux viene en diferentes “ediciones” denominadas “Flavours” (o sabores en inglés).</p>
+<p class="bx--tile__text">Existen muchos sabores de linux, sin embargo los más populares en ciberseguridad son los siguientes:</p>
+<br />
+<p class="bx--tile__text">Kali: el cual es el que mayormente se usa debido a su variedad de herramientas ya instaladas.</p>
+<p class="bx--tile__text">Parrot: Muy similar a Kali pero con sus ligeras variaciones en estética y estabilidad (siendo más estable que Kali).</p>
+<p class="bx--tile__text">Debian: Kali y Parrot están basados en Debian por lo que ir con esta opción será la más estable debido a que viene “de fabrica” (sin ningun software de ciberseguridad añadido), es la opción más personalizable sin embargo esta versión se aprovecha más si se instala nativa.</p>
+<p class="bx--tile__text">Sistema Operativo Nativo: Algunas personas deciden Particionar su disco y usar una versión de Linux nativamente como sistema operativo principal, esto es buena opción si te quieres familiarizarse con el entorno de GNU/LINUX.</p>
+<p class="bx--tile__text">Sistema Operativo Virtualizado: Esta opción es la mejor en tema de sencillez, solo deberás instalar un software de virtualización (Como recomendación instala VMware, Virtual Box no se utiliza en la industria y es un software bastante inestable).</p>
+<p class="bx--tile__text">Sistema Operativo En Contenedores: Esta también es una opción si gustas meterte al tema de contenedores, solo la menciono para no dejarla de lado, sin embargo nadie de la generación usó esta opción por considerarla algo inestable.</p>
+<br />
+
+<h2 class="bx--type-expressive-heading-03">Resumen (puntos a investigar y recursos)</h2>
+<p class="bx--tile__text">Entender que son los puertos de un dispositivo.</p>
+<p class="bx--tile__text">Identificar que es cada puerto popularmente.</p>
+<p class="bx--tile__text">Realidad y roles que existen en la ciberseguridad (Red team, blue team y purple team).</p>
+<p class="bx--tile__text">La psicología de la manipulación y la ética de trabajar en una empresa.</p>
+<p class="bx--tile__text">Linux y sus sabores.</p>
+<p class="bx--tile__text">Entender cómo trabaja una terminal de linux.</p>
+<p class="bx--tile__text">¿Qué es el HASH?</p>
+<p class="bx--tile__text">Permisos y escalabilidad en linux y sistemas operativos.</p>
+<p class="bx--tile__text">Comandos linux (cd, ls, sudo, etc.).</p>
+<p class="bx--tile__text">Creación de documentación de pentest.</p>
+<p class="bx--tile__text">Instalación de máquinas virtuales.</p>
+<p class="bx--tile__text">Curso de Hacking Gratuito <a href="https://www.netacad.com/es/courses/ethical-hacker?courseLang=en-US"> Proporcionado por cisco </a></p>
+<br />
+                </div>
                </div>
            </div>
       </div>

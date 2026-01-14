@@ -7,19 +7,24 @@ function showSection(id) {
   if(target) target.classList.add('active');
 }
 
-// 2. Navegación de Materias (Tabs internas)
+// 2. Navegación de Materias (Tabs internas) - versión custom
 function showMateria(id, btn) {
   const parentSection = btn.closest('section');
-  parentSection.querySelectorAll('.materia').forEach(m => m.classList.remove('active'));
-  
-  const targetMateria = document.getElementById(id);
-  if(targetMateria) targetMateria.classList.add('active');
 
-  btn.closest('.bx--tabs__nav')
-     .querySelectorAll('.bx--tabs__nav-item')
-     .forEach(t => t.classList.remove('bx--tabs__nav-item--selected'));
-  
-  btn.parentElement.classList.add('bx--tabs__nav-item--selected');
+  // ocultar materias
+  parentSection.querySelectorAll('.materia')
+    .forEach(m => m.classList.remove('active'));
+
+  // mostrar seleccionada
+  const targetMateria = document.getElementById(id);
+  if (targetMateria) targetMateria.classList.add('active');
+
+  // desactivar tabs
+  parentSection.querySelectorAll('.bx--tabs__nav-link')
+    .forEach(t => t.classList.remove('is-active'));
+
+  // activar tab actual
+  btn.classList.add('is-active');
 }
 
 // 3. Acordeón del Sidebar

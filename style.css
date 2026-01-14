@@ -178,7 +178,7 @@ a:hover {
 
 .bx--tile__text {
     color: var(--text-muted);
-    font-size: 0.9rem;
+    font-size: 1rem;
     margin-bottom: 1rem;
 }
 
@@ -292,6 +292,78 @@ a:hover {
         font-weight: bold;
         border-radius: 4px;
         box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-    }
-    
+    }   
+}
+
+/* Ajustes para Tabs en móvil */
+/* ===============================
+   TABS CUSTOM ESTILO CARBON DARK
+   =============================== */
+
+.tabs-carbon-custom {
+  background: #121212;
+  border-bottom: 1px solid #262626;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.tabs-scroll {
+  display: flex;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+
+.tabs-scroll::-webkit-scrollbar {
+  height: 4px;
+}
+
+.tabs-scroll::-webkit-scrollbar-thumb {
+  background: #8a3ffc;
+  border-radius: 4px;
+}
+
+/* Botones tipo Carbon */
+
+.bx--tabs__nav-link {
+  background: transparent;
+  border: none;
+  color: #c6c6c6;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 0.875rem;
+  padding: 0.5rem 0.25rem;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.bx--tabs__nav-link:hover {
+  color: #ffffff;
+}
+
+.bx--tabs__nav-link.is-active {
+  color: #ffffff;
+  border-bottom-color: #8a3ffc;
+}
+
+/* Agrega espacio vertical entre tarjetas cuando cambian de fila */
+.materia .bx--row {
+    row-gap: 2rem; /* Aproximadamente 32px, siguiendo el estándar de Carbon */
+}
+
+.bx--type-expressive-heading-03 {  
+    color: #be95ff; /* Títulos de materias en morado claro */
+}
+p {
+    color: #c6c6c6; /* Texto general en gris claro */
+}
+h3 {
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: 0;
+  color: #be95ff;
 }

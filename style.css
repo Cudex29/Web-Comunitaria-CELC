@@ -370,6 +370,6 @@ h3 {
 
 /* Ajustes para los tiles de recursos */
 .bx--tag--red { /* Etiqueta roja personalizada */
-  background-color: #ff000d;
-  color: #ffffff; /* Texto blanco */
+  background-color: #ff000d !important;
+  color: #ffffff !important /*texto blanco*/
 }

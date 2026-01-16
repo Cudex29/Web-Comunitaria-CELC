@@ -367,3 +367,9 @@ h3 {
   letter-spacing: 0;
   color: #be95ff;
 }
+
+/* Ajustes para los tiles de recursos */
+.bx--tag--red { /* Etiqueta roja personalizada */
+  background-color: #ff000d;
+  color: #ffffff; /* Texto blanco */
+}

@@ -18,7 +18,7 @@
   <button class="menu-toggle" onclick="toggleSidebar()">☰ Menú</button>
 
   <aside class="sidebar" id="mainSidebar">
-    <h2>CELC</h2>
+    <h2>Menu</h2>
     
     <button class="welcome-btn" onclick="showSection('bienvenida'); closeSidebarMobile()">
       <img src="./imagenes/home.svg" alt="🏠" class="welcome-icon" onerror="this.style.display='none'"/>
@@ -58,7 +58,7 @@
           <span class="bx--accordion__title">Recursos Extra</span>
         </button>
         <div class="bx--accordion__content">
-          <button class="bx--btn bx--btn--ghost bx--btn--sm" onclick="showSection('sem5'); closeSidebarMobile()">Cheatsheets Dev</button>
+          <button class="bx--btn bx--btn--ghost bx--btn--sm" onclick="showSection('sem5'); closeSidebarMobile()">Material Extra</button>
           <button class="bx--btn bx--btn--ghost bx--btn--sm" onclick="showSection('sem6'); closeSidebarMobile()">Manuales</button>
         </div>
       </div>
@@ -106,11 +106,23 @@
               <button class="bx--tabs__nav-link" onclick="showMateria('sem1-mat3', this)">Álgebra Lineal</button>
             </li>
           </ul>
+        <div class="tabs-carbon-custom">
+          <div class="tabs-scroll">
+            <button class="bx--tabs__nav-link is-active" onclick="showMateria('sem1-mat1', this)">Matemáticas 1</button>
+            <button class="bx--tabs__nav-link" onclick="showMateria('sem1-mat2', this)">Bases de Datos</button>
+            <button class="bx--tabs__nav-link" onclick="showMateria('sem1-mat3', this)">Algebra Lineal</button>
+            <button class="bx--tabs__nav-link" onclick="showMateria('sem1-mat4', this)">Innovación Tecnológica</button>
+            <button class="bx--tabs__nav-link" onclick="showMateria('sem1-mat5', this)">Pensamiento Crítico</button>
+            <button class="bx--tabs__nav-link" onclick="showMateria('sem1-mat6', this)">Inteligencia Colectiva</button>
+            <button class="bx--tabs__nav-link" onclick="showMateria('sem1-mat7', this)">GUIA DEL SEMESTRE</button>
+          </div>
         </div>
       </div>
 
       <div class="materia active" id="sem1-mat1">
-        <h3 style="margin-bottom:1.5rem;">Matemáticas 1: Fundamentos</h3>
+        <h3>Matemáticas 1: Fundamentos</h3>
+        <p>Recursos y enlaces para Matemáticas 1.</p>
+        <br>
         <div class="bx--grid">
           <div class="bx--row">
             <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
@@ -120,25 +132,142 @@
                 <span class="bx--tag bx--tag--blue">PDF</span>
               </a>
             </div>
-             <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
-              <a href="#" class="bx--tile bx--tile--clickable resource-tile">
-                <p class="bx--tile__title">Clase Grabada: Funciones</p>
-                <p class="bx--tile__text">Explicación del profe X sobre límites.</p>
-                <span class="bx--tag bx--tag--green">Video</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="materia" id="sem1-mat2">
+        <h2 class="bx--type-expressive-heading-03">Bases de Datos</h2>
+        <br>
+        <div class="bx--grid">
+          <div class="bx--row">
+            <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+              <a href="https://www.kali.org/" target="_blank" class="bx--tile bx--tile--clickable resource-tile">
+                <p class="bx--tile__title">Titulo</p>
+                <p class="bx--tile__text">Descripcion</p>
+                <span class="bx--tag bx--tag--purple">TIPO</span>
+              </a>
+            </div>
+
+            <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+              <a href="https://www.kali.org/" target="_blank" class="bx--tile bx--tile--clickable resource-tile">
+                <p class="bx--tile__title">Titulo</p>
+                <p class="bx--tile__text">Descripcion</p>
+                <span class="bx--tag bx--tag--purple">TIPO</span>
+              </a>
+            </div>
+          </div> <!-- FIN ROW -->
+        </div>  <!-- FIN GRID -->
+      </div>
+
+      <div class="materia" id="sem1-mat3">
+        <h2 class="bx--type-expressive-heading-03">Álgebra Lineal</h2>
+        <br>
+        <div class="bx--grid">
+          <div class="bx--row">
+            <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+              <a href="https://www.kali.org/" target="_blank" class="bx--tile bx--tile--clickable resource-tile">
+                <p class="bx--tile__title">Titulo</p>
+                <p class="bx--tile__text">Descripcion</p>
+                <span class="bx--tag bx--tag--purple">TIPO</span>
+              </a>
+            </div>
+
+            <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+              <a href="https://www.kali.org/" target="_blank" class="bx--tile bx--tile--clickable resource-tile">
+                <p class="bx--tile__title">Titulo</p>
+                <p class="bx--tile__text">Descripcion</p>
+                <span class="bx--tag bx--tag--purple">TIPO</span>
               </a>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="materia" id="sem1-mat2">
-        <h3>Bases de Datos</h3>
-        <p>Contenido pendiente...</p>
+      <div class="materia" id="sem1-mat4">
+        <h2 class="bx--type-expressive-heading-03">Innovación Tecnológica</h2>
+        <br>
+        <div class="bx--grid">
+          <div class="bx--row">
+            <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+              <a href="https://www.kali.org/" target="_blank" class="bx--tile bx--tile--clickable resource-tile">
+                <p class="bx--tile__title">Titulo</p>
+                <p class="bx--tile__text">Descripcion</p>
+                <span class="bx--tag bx--tag--purple">TIPO</span>
+              </a>
+            </div>
+
+            <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+              <a href="https://www.kali.org/" target="_blank" class="bx--tile bx--tile--clickable resource-tile">
+                <p class="bx--tile__title">Titulo</p>
+                <p class="bx--tile__text">Descripcion</p>
+                <span class="bx--tag bx--tag--purple">TIPO</span>
+              </a>
+            </div>
+
+            <!--Este podria ser un gran lugar para colocar mas links al contenido-->>
+
+          </div> <!-- DIV ROW-->
+        </div> <!-- DIV GRID-->
+      </div> <!-- FIN MATERIA4 -->
+
+      <div class="materia" id="sem1-mat5">
+        <h2 class="bx--type-expressive-heading-03">Pensamiento Crítico</h2>
+        <br>
+        <div class="bx--grid">
+          <div class="bx--row">
+            <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+              <a href="https://www.kali.org/" target="_blank" class="bx--tile bx--tile--clickable resource-tile">
+                <p class="bx--tile__title">Titulo</p>
+                <p class="bx--tile__text">Descripcion</p>
+                <span class="bx--tag bx--tag--purple">TIPO</span>
+              </a>
+            </div>
+
+            <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+              <a href="https://www.kali.org/" target="_blank" class="bx--tile bx--tile--clickable resource-tile">
+                <p class="bx--tile__title">Titulo</p>
+                <p class="bx--tile__text">Descripcion</p>
+                <span class="bx--tag bx--tag--purple">TIPO</span>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
-      
-       <div class="materia" id="sem1-mat3">
-        <h3>Algebra Lineal</h3>
-        <p>Contenido pendiente...</p>
+
+      <div class="materia" id="sem1-mat6">
+        <h2 class="bx--type-expressive-heading-03">Inteligencia Colectiva</h2>
+        <br>
+        <div class="bx--grid">
+          <div class="bx--row">
+            <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+              <a href="https://www.kali.org/" target="_blank" class="bx--tile bx--tile--clickable resource-tile">
+                <p class="bx--tile__title">Titulo</p>
+                <p class="bx--tile__text">Descripcion</p>
+                <span class="bx--tag bx--tag--purple">TIPO</span>
+              </a>
+            </div>
+
+            <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+              <a href="https://www.kali.org/" target="_blank" class="bx--tile bx--tile--clickable resource-tile">
+                <p class="bx--tile__title">Titulo</p>
+                <p class="bx--tile__text">Descripcion</p>
+                <span class="bx--tag bx--tag--purple">TIPO</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="materia" id="sem1-mat7">
+        <h2 class="bx--type-expressive-heading-03">Guía del Primer Semestre</h2>
+        <p class="bx--tile__text">Resumen, recomendaciones y lista de recursos para afrontar el primer semestre.</p>
+        <br>
+        <ul>
+          <li>Revisar fundamentos de programación y matemáticas.</li>
+          <li>Practicar lectura técnica en inglés.</li>
+          <li>Familiarizarse con documentación y organización de apuntes.</li>
+        </ul>
       </div>
     </section>
 
@@ -149,36 +278,149 @@
           <div class="bx--breadcrumb-item"><span>Segundo Semestre</span></div>
         </nav>
         <h1 class="bx--type-expressive-heading-04">Segundo Semestre</h1>
-        <div class="bx--tabs bx--tabs--contained">
-          <ul class="bx--tabs__nav" role="tablist">
-            <li class="bx--tabs__nav-item bx--tabs__nav-item--selected">
-              <button class="bx--tabs__nav-link" onclick="showMateria('sem2-mat1', this)">Programación 1</button>
-            </li>
-            <li class="bx--tabs__nav-item">
-              <button class="bx--tabs__nav-link" onclick="showMateria('sem2-mat2', this)">Ética y Resp.</button>
-            </li>
-          </ul>
+
+        <div class="tabs-carbon-custom">
+          <div class="tabs-scroll">
+            <button class="bx--tabs__nav-link is-active" onclick="showMateria('sem2-mat1', this)">Programación 1</button>
+            <button class="bx--tabs__nav-link" onclick="showMateria('sem2-mat2', this)">Ética y Responsabilidad Social</button>
+            <button class="bx--tabs__nav-link" onclick="showMateria('sem2-mat3', this)">Matemáticas 2</button>
+            <button class="bx--tabs__nav-link" onclick="showMateria('sem2-mat4', this)">Probabilidad y Estadística</button>
+            <button class="bx--tabs__nav-link" onclick="showMateria('sem2-mat5', this)">Gestión de Proyectos</button>
+            <button class="bx--tabs__nav-link" onclick="showMateria('sem2-mat6', this)">Storytelling</button>
+            <button class="bx--tabs__nav-link" onclick="showMateria('sem2-mat7', this)">GUIA DEL SEMESTRE</button>
+          </div>
         </div>
       </div>
 
       <div class="materia active" id="sem2-mat1">
         <h3>Programación 1: C++ / Python</h3>
+        <p>Fundamentos de programación, estructuras y prácticas.</p>
+      </div>
+
+      <div class="materia" id="sem2-mat2">
+        <h2 class="bx--type-expressive-heading-03">Ética y Responsabilidad Social</h2>
+        <br>
         <div class="bx--grid">
-            <div class="bx--row">
-              <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
-                <a href="#" class="bx--tile bx--tile--clickable resource-tile">
-                  <p class="bx--tile__title">Lógica de Punteros</p>
-                  <p class="bx--tile__text">Guía rápida para no morir con punteros en C++.</p>
-                  <span class="bx--tag bx--tag--purple">Guía</span>
-                </a>
-              </div>
+          <div class="bx--row">
+            <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+              <a href="https://www.kali.org/" target="_blank" class="bx--tile bx--tile--clickable resource-tile">
+                <p class="bx--tile__title">Titulo</p>
+                <p class="bx--tile__text">Descripcion</p>
+                <span class="bx--tag bx--tag--purple">TIPO</span>
+              </a>
             </div>
+
+            <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+              <a href="https://www.kali.org/" target="_blank" class="bx--tile bx--tile--clickable resource-tile">
+                <p class="bx--tile__title">Titulo</p>
+                <p class="bx--tile__text">Descripcion</p>
+                <span class="bx--tag bx--tag--purple">TIPO</span>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
-      
-      <div class="materia" id="sem2-mat2">
-          <h3>Ética</h3>
-          <p>Pendiente</p>
+
+      <div class="materia" id="sem2-mat3">
+        <h2 class="bx--type-expressive-heading-03">Matemáticas 2</h2>
+        <br>
+        <div class="bx--grid">
+          <div class="bx--row">
+            <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+              <a href="https://www.kali.org/" target="_blank" class="bx--tile bx--tile--clickable resource-tile">
+                <p class="bx--tile__title">Titulo</p>
+                <p class="bx--tile__text">Descripcion</p>
+                <span class="bx--tag bx--tag--purple">TIPO</span>
+              </a>
+            </div>
+
+            <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+              <a href="https://www.kali.org/" target="_blank" class="bx--tile bx--tile--clickable resource-tile">
+                <p class="bx--tile__title">Titulo</p>
+                <p class="bx--tile__text">Descripcion</p>
+                <span class="bx--tag bx--tag--purple">TIPO</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="materia" id="sem2-mat4">
+        <h2 class="bx--type-expressive-heading-03">Probabilidad y Estadística</h2>
+        <br>
+        <div class="bx--grid">
+          <div class="bx--row">
+            <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+              <a href="https://www.kali.org/" target="_blank" class="bx--tile bx--tile--clickable resource-tile">
+                <p class="bx--tile__title">Titulo</p>
+                <p class="bx--tile__text">Descripcion</p>
+                <span class="bx--tag bx--tag--purple">TIPO</span>
+              </a>
+            </div>
+
+            <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+              <a href="https://www.kali.org/" target="_blank" class="bx--tile bx--tile--clickable resource-tile">
+                <p class="bx--tile__title">Titulo</p>
+                <p class="bx--tile__text">Descripcion</p>
+                <span class="bx--tag bx--tag--purple">TIPO</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="materia" id="sem2-mat5">
+        <h2 class="bx--type-expressive-heading-03">Gestión de Proyectos</h2>
+        <br>
+        <div class="bx--grid">
+          <div class="bx--row">
+            <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+              <a href="https://www.kali.org/" target="_blank" class="bx--tile bx--tile--clickable resource-tile">
+                <p class="bx--tile__title">Titulo</p>
+                <p class="bx--tile__text">Descripcion</p>
+                <span class="bx--tag bx--tag--purple">TIPO</span>
+              </a>
+            </div>
+
+            <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+              <a href="https://www.kali.org/" target="_blank" class="bx--tile bx--tile--clickable resource-tile">
+                <p class="bx--tile__title">Titulo</p>
+                <p class="bx--tile__text">Descripcion</p>
+                <span class="bx--tag bx--tag--purple">TIPO</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="materia" id="sem2-mat6">
+        <h2 class="bx--type-expressive-heading-03">Storytelling</h2>
+        <br>
+        <div class="bx--grid">
+          <div class="bx--row">
+            <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+              <a href="https://www.kali.org/" target="_blank" class="bx--tile bx--tile--clickable resource-tile">
+                <p class="bx--tile__title">Titulo</p>
+                <p class="bx--tile__text">Descripcion</p>
+                <span class="bx--tag bx--tag--purple">TIPO</span>
+              </a>
+            </div>
+
+            <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+              <a href="https://www.kali.org/" target="_blank" class="bx--tile bx--tile--clickable resource-tile">
+                <p class="bx--tile__title">Titulo</p>
+                <p class="bx--tile__text">Descripcion</p>
+                <span class="bx--tag bx--tag--purple">TIPO</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="materia" id="sem2-mat7">
+        <!-- guía del semestre: sin cambios -->
+        <h2 class="bx--type-expressive-heading-03">Guía del Segundo Semestre</h2>
+        <p class="bx--tile__text">Consejos, ritmo de trabajo y recursos recomendados para el segundo semestre.</p>
       </div>
     </section>
 
@@ -188,19 +430,89 @@
           <div class="bx--breadcrumb-item"><a href="#" onclick="showSection('bienvenida')">Inicio</a></div>
           <div class="bx--breadcrumb-item"><span>Tercer Semestre</span></div>
         </nav>
-        <h1 class="bx--type-expressive-heading-04">Tercer Semestre (Core Cybersec)</h1>
-        <div class="bx--tabs bx--tabs--contained">
-          <ul class="bx--tabs__nav" role="tablist">
-            <li class="bx--tabs__nav-item bx--tabs__nav-item--selected">
-              <button class="bx--tabs__nav-link" onclick="showMateria('sem3-mat2', this)">Hacking Ético</button>
-            </li>
-             <li class="bx--tabs__nav-item">
-              <button class="bx--tabs__nav-link" onclick="showMateria('sem3-mat8', this)">Guía General</button>
-            </li>
-          </ul>
-        </div>
+        <h1 class="bx--type-expressive-heading-04">Tercer Semestre </h1>
+<div class="tabs-carbon-custom">
+  <div class="tabs-scroll">
+
+    <button class="bx--tabs__nav-link is-active"
+        onclick="showMateria('sem3-mat1', this)">
+      Programación 2
+    </button>
+
+    <button class="bx--tabs__nav-link"
+        onclick="showMateria('sem3-mat2', this)">
+      Hacking Ético
+    </button>
+
+    <button class="bx--tabs__nav-link"
+        onclick="showMateria('sem3-mat3', this)">
+      Sistemas Operativos
+    </button>
+
+    <button class="bx--tabs__nav-link"
+        onclick="showMateria('sem3-mat4', this)">
+      Redes y Telecomunicaciones
+    </button>
+
+    <button class="bx--tabs__nav-link"
+        onclick="showMateria('sem3-mat5', this)">
+      Gestión de Riesgos
+    </button>
+
+    <button class="bx--tabs__nav-link"
+        onclick="showMateria('sem3-mat6', this)">
+      La Nube Computacional
+    </button>
+
+    <button class="bx--tabs__nav-link"
+        onclick="showMateria('sem3-mat7', this)">
+      Bases de Datos
+    </button>
+
+    <button class="bx--tabs__nav-link"
+            onclick="showMateria('sem3-mat8', this)">
+      Guía General
+    </button>
+
+  </div>
+</div>
       </div>
       
+      <div class="materia active" id="sem3-mat1">
+          <h2 class="bx--type-expressive-heading-03">Programacion 2</h2>
+          <br>
+          <div class="bx--grid">
+              <div class="bx--row">
+
+                <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+                  <a href="https://youtu.be/55jdHSsVBas?si=YaFSOyrTDK_G8bnP" target="_blank" class="bx--tile bx--tile--clickable resource-tile">
+                    <p class="bx--tile__title">Canal de YT</p>
+                    <p class="bx--tile__text">Canal de Programación super dirigible para poder comprender ciertos temas de programación</p>
+                    <span class="bx--tag bx--tag--red">Video</span>
+                  </a>
+                </div>
+
+                <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+                  <a href="https://youtu.be/-6BYa_x_QA0?si=dP5cnWhHhiZfYTuc" target="_blank" class="bx--tile bx--tile--clickable resource-tile">
+                    <p class="bx--tile__title">Canal con curso completo</p>
+                    <p class="bx--tile__text">Canal con curso completo de programación</p>
+                    <span class="bx--tag bx--tag--red">Video</span>
+                  </a>
+                </div>
+
+                <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+                  <a href="https://www.youtube.com/watch?v=InBm1uDgmKg" target="_blank" class="bx--tile bx--tile--clickable resource-tile">
+                    <p class="bx--tile__title">Logica de Programación</p>
+                    <p class="bx--tile__text"> La mayoría de cursos que hay en linea sobre programación funcionan, elijan uno, haganlo y terminenlo, no busquen mil cursos del mismo tema, solo les ocasionará analisis paralisis. 
+</p>
+                    <span class="bx--tag bx--tag--red">Video</span>
+                  </a>
+                </div>
+
+              </div> <!-- FIN ROW -->
+          </div>  <!-- FIN GRID -->
+      </div> <!-- FIN MATERIA1 -->
+
       <div class="materia active" id="sem3-mat2">
           <h2 class="bx--type-expressive-heading-03">Hacking Ético: Fundamentos</h2>
           <br>
@@ -210,45 +522,419 @@
                   <a href="https://www.kali.org/" target="_blank" class="bx--tile bx--tile--clickable resource-tile">
                     <p class="bx--tile__title">Kali Linux Official</p>
                     <p class="bx--tile__text">Descarga la ISO oficial para máquinas virtuales.</p>
-                    <span class="bx--tag bx--tag--red">Herramienta</span>
+                    <span class="bx--tag bx--tag--purple">Herramienta</span>
                   </a>
                 </div>
+
                  <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
-                  <a href="#" class="bx--tile bx--tile--clickable resource-tile">
-                    <p class="bx--tile__title">Manual de Nmap</p>
-                    <p class="bx--tile__text">Comandos básicos para escaneo de puertos.</p>
+                  <a href="https://www.youtube.com/watch?v=oBtJ7bryKII" class="bx--tile bx--tile--clickable resource-tile">
+                    <p class="bx--tile__title">LLenado reporte pentest</p>
+                    <p class="bx--tile__text">Como llenar un reporte de pentesting</p>
+                    <span class="bx--tag bx--tag--red">Video</span>
+                  </a>
+                </div>
+
+                 <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+                  <a href="https://listings.pcisecuritystandards.org/documents/Penetration-Testing-Guidance-v1_1.pdf" class="bx--tile bx--tile--clickable resource-tile">
+                    <p class="bx--tile__title">Estandares de pentesting</p>
+                    <p class="bx--tile__text">Guia de pentesting - Security Standards Council</p>
                     <span class="bx--tag bx--tag--blue">PDF</span>
                   </a>
                 </div>
+
+                 <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+                  <a href="https://www.netacad.com/es/courses/ethical-hacker?courseLang=en-US" class="bx--tile bx--tile--clickable resource-tile">
+                    <p class="bx--tile__title">Hacking Etico</p>
+                    <p class="bx--tile__text">Curso de CISCO</p>
+                    <span class="bx--tag bx--tag--green">Curso</span>
+                  </a>
+                </div>
+
+                 <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+                  <a href="https://www.youtube.com/watch?v=r_xN-vzJnxA" class="bx--tile bx--tile--clickable resource-tile">
+                    <p class="bx--tile__title">Kali en una VM</p>
+                    <p class="bx--tile__text">Como instalar Kali Linux en VMware</p>
+                    <span class="bx--tag bx--tag--red">Video</span>
+                  </a>
+                </div>
+
+                 <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+                  <a href="https://www.youtube.com/watch?v=NIQZOviElSU" class="bx--tile bx--tile--clickable resource-tile">
+                    <p class="bx--tile__title">Linux en 100 segundos</p>
+                    <p class="bx--tile__text">Que es linux y como funciona</p>
+                    <span class="bx--tag bx--tag--red">Video</span>
+                  </a>
+                </div>
+
+                 <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+                  <a href="https://overthewire.org/wargames/" class="bx--tile bx--tile--clickable resource-tile">
+                    <p class="bx--tile__title">OverTheWire Wargames</p>
+                    <p class="bx--tile__text">Juegos para aprender hacking ético</p>
+                    <span class="bx--tag bx--tag--purple">Herramienta</span>
+                  </a>
+                </div>
+
               </div>
           </div>
+      </div>
+            <div class="materia" id="sem3-mat3">
+        <h2 class="bx--type-expressive-heading-03">Sistemas Operativos</h2>
+        <br>
+        <div class="bx--grid">
+          <div class="bx--row">
+            <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+              <a href="https://www.youtube.com/watch?v=L906Kti3gzE" target="_blank" class="bx--tile bx--tile--clickable resource-tile">
+                <p class="bx--tile__title">Linux desde 0</p>
+                <p class="bx--tile__text">Esto les ayudara a usar linux para los que vienen de windows</p>
+                <span class="bx--tag bx--tag--red">Video</span>
+              </a>
+            </div>
+
+            <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+              <a href="https://www.youtube.com/watch?v=7qJwaOMXnJg&pp=ygURcGVybWlzb3MgZW4gbGludXg%3D" target="_blank" class="bx--tile bx--tile--clickable resource-tile">
+                <p class="bx--tile__title">Permisos en Linux</p>
+                <p class="bx--tile__text">Como funcionan los permisos en Linux</p>
+                <span class="bx--tag bx--tag--red">Video</span>
+              </a>
+            </div>
+
+            <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+              <a href="https://www.youtube.com/watch?v=UC5TWqJp7Z0" target="_blank" class="bx--tile bx--tile--clickable resource-tile">
+                <p class="bx--tile__title">Cómo Funcionan las MÁQUINAS VIRTUALES?</p>
+                <p class="bx--tile__text">Para los que empiecen y trabajen comodamente</p>
+                <span class="bx--tag bx--tag--red">Video</span>
+              </a>
+            </div>
+
+            <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+              <a href="https://www.youtube.com/watch?v=sIcZqmJxan4" target="_blank" class="bx--tile bx--tile--clickable resource-tile">
+                <p class="bx--tile__title">Kali linux en una maquina virtual</p>
+                <p class="bx--tile__text">Para que lo instalen en su virtual box </p>
+                <span class="bx--tag bx--tag--red">Video</span>
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+            <div class="materia" id="sem3-mat4">
+        <h2 class="bx--type-expressive-heading-03">Redes y Telecomunicaciones</h2>
+        <br>
+        <div class="bx--grid">
+          <div class="bx--row">
+            <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+              <a href="https://www.youtube.com/watch?v=Gky8-OVYmT4" target="_blank" class="bx--tile bx--tile--clickable resource-tile">
+                <p class="bx--tile__title">Redes</p>
+                <p class="bx--tile__text">como funciona y diferencias del switch, router y hub</p>
+                <span class="bx--tag bx--tag--red">Video</span>
+              </a>
+            </div>
+
+            <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+              <a href="https://learningnetwork.cisco.com/s/article/el-software-de-simulacion-cisco-packet-tracer" target="_blank" class="bx--tile bx--tile--clickable resource-tile">
+                <p class="bx--tile__title">Packet Tracer</p>
+                <p class="bx--tile__text">Herramienta para simular redes</p>
+                <span class="bx--tag bx--tag--purple">Herramienta</span>
+              </a>
+            </div>
+
+            <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+              <a href="https://www.youtube.com/watch?v=wksPyiU1BvE " target="_blank" class="bx--tile bx--tile--clickable resource-tile">
+                <p class="bx--tile__title">Introducción a redes</p>
+                <p class="bx--tile__text">Punto de partida para estudiar redes</p>
+                <span class="bx--tag bx--tag--red">Video</span>
+              </a>
+            </div>
+
+            <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+              <a href="https://www.youtube.com/watch?v=l6brkMOJCIo" target="_blank" class="bx--tile bx--tile--clickable resource-tile">
+                <p class="bx--tile__title">Tipos de redes</p>
+                <p class="bx--tile__text">Punto de partida para estudiar redes</p>
+                <span class="bx--tag bx--tag--red">Video</span>
+              </a>
+            </div>
+
+            <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+              <a href="https://www.youtube.com/watch?v=MqpIJLmMny8&pp=ygUKbW9kZWxvIG9zaQ%3D%3D" target="_blank" class="bx--tile bx--tile--clickable resource-tile">
+                <p class="bx--tile__title">Modelo OSI</p>
+                <p class="bx--tile__text"> sus capas y de que va cada uno</p>
+                <span class="bx--tag bx--tag--red">Video</span>
+              </a>
+            </div>
+
+             <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+              <a href="https://www.youtube.com/watch?v=_JNPvSxG6oM&pp=ygUKbW9kZWxvIG9zaQ%3D%3D" target="_blank" class="bx--tile bx--tile--clickable resource-tile">
+                <p class="bx--tile__title">IPv4, IPv6</p>
+                <p class="bx--tile__text">Protocolos de IP</p>
+                <span class="bx--tag bx--tag--red">Video</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+            <div class="materia" id="sem3-mat5">
+        <h2 class="bx--type-expressive-heading-03">Gestion de Riesgos</h2>
+        <br>
+        <div class="bx--grid">
+          <div class="bx--row">
+            <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+              <a href="https://www.youtube.com/watch?v=rCBcniuhBGQ" target="_blank" class="bx--tile bx--tile--clickable resource-tile">
+                <p class="bx--tile__title">Gestion de Riesgos</p>
+                <p class="bx--tile__text">Introducción sobre gestión de riesgos</p>
+                <span class="bx--tag bx--tag--red">Video</span>
+              </a>
+            </div>
+
+            <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+              <a href="https://www.nist.gov/cyberframework" target="_blank" class="bx--tile bx--tile--clickable resource-tile">
+                <p class="bx--tile__title">Framework NIST CF</p>
+                <p class="bx--tile__text">Framework de gestión de riesgos</p>
+                <span class="bx--tag bx--tag--purple">Herramienta</span>
+              </a>
+            </div>
+
+             <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+              <a href="https://csrc.nist.gov/pubs/sp/800/61/r3/final" target="_blank" class="bx--tile bx--tile--clickable resource-tile">
+                <p class="bx--tile__title">NIST SP 800-61 rev. 3</p>
+                <p class="bx--tile__text">Framework de gestión de riesgos</p>
+                <span class="bx--tag bx--tag--purple">Herramienta</span>
+              </a>
+            </div>
+
+             <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+              <a href="https://www.iso.org/es/norma/27001" target="_blank" class="bx--tile bx--tile--clickable resource-tile">
+                <p class="bx--tile__title">ISO 27001</p>
+                <p class="bx--tile__text">Todo el contenido de esto viene en ingles entonces tienen que aprender inglés</p>
+                <span class="bx--tag bx--tag--purple">Herramienta</span>
+              </a>
+            </div>
+
+             <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+              <a href="https://www.tiktok.com/@as_meth?_r=1&_t=ZS-933ORAepBxt" target="_blank" class="bx--tile bx--tile--clickable resource-tile">
+                <p class="bx--tile__title">tiktoker</p>
+                <p class="bx--tile__text">Mayoria de contenido generado por IA, pero buena informacion.</p>
+                <span class="bx--tag bx--tag--red">Video</span>
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+            <div class="materia" id="sem3-mat6">
+        <h2 class="bx--type-expressive-heading-03">La nube Computacional</h2>
+        <br>
+        <div class="bx--grid">
+          <div class="bx--row">
+            <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+              <a href="https://www.youtube.com/watch?v=wksPyiU1BvE" target="_blank" class="bx--tile bx--tile--clickable resource-tile">
+                <p class="bx--tile__title">Introduccion a las redes</p>
+                <p class="bx--tile__text">Conceptos basicos de redes</p>
+                <span class="bx--tag bx--tag--red">Video</span>
+              </a>
+            </div>
+
+            <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+              <a href="https://www.youtube.com/watch?v=l6brkMOJCIo" target="_blank" class="bx--tile bx--tile--clickable resource-tile">
+                <p class="bx--tile__title">Tipos de redes</p>
+                <p class="bx--tile__text">Descripción de los tipos de redes</p>
+                <span class="bx--tag bx--tag--red">Video</span>
+              </a>
+            </div>
+
+            <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+              <a href="https://www.youtube.com/watch?v=MqpIJLmMny8&pp=ygUKbW9kZWxvIG9zaQ%3D%3D" target="_blank" class="bx--tile bx--tile--clickable resource-tile">
+                <p class="bx--tile__title">Modelo OSI Y TCP/IP</p>
+                <p class="bx--tile__text">Aprende sobre las capas del modelo OSI</p>
+                <span class="bx--tag bx--tag--red">Video</span>
+              </a>
+            </div>
+
+             <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+              <a href="https://www.youtube.com/watch?v=_JNPvSxG6oM&pp=ygUKbW9kZWxvIG9zaQ%3D%3D" target="_blank" class="bx--tile bx--tile--clickable resource-tile">
+                <p class="bx--tile__title">Direcciones ipv4 y 6</p>
+                <p class="bx--tile__text">Aprende sobre Direcciones IPv4 y IPv6</p>
+                <span class="bx--tag bx--tag--red">Video</span>
+              </a>
+            </div>
+
+             <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+              <a href="https://www.youtube.com/watch?v=-7DiO35rbN8&pp=ygUTUXVlIHNvbiBsb3MgcHVlcnRvcw%3D%3D" target="_blank" class="bx--tile bx--tile--clickable resource-tile">
+                <p class="bx--tile__title">Puertos y Sockets</p>
+                <p class="bx--tile__text">Parte de un curso de redes desde 0</p>
+                <span class="bx--tag bx--tag--red">Video</span>
+              </a>
+            </div>
+
+             <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+              <a href="https://www.youtube.com/watch?v=g7iiqatv4Mo" target="_blank" class="bx--tile bx--tile--clickable resource-tile">
+                <p class="bx--tile__title">Puertos y Sockets</p>
+                <p class="bx--tile__text">Nunca es suficiente aprender sobre puertos</p>
+                <span class="bx--tag bx--tag--red">Video</span>
+              </a>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+  
+            <div class="materia" id="sem3-mat7">
+        <h2 class="bx--type-expressive-heading-03">Bases de datos</h2>
+        <br>
+        <div class="bx--grid">
+          <div class="bx--row">
+
+            <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+              <a href="https://www.youtube.com/watch?v=IFcWZgJzBt0" target="_blank" class="bx--tile bx--tile--clickable resource-tile">
+                <p class="bx--tile__title">Que es github</p>
+                <p class="bx--tile__text">Tendras que usarlo tarde o temprano</p>
+                <span class="bx--tag bx--tag--red">Video</span>
+              </a>
+            </div>
+
+            <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+              <a href="https://www.youtube.com/watch?v=DinilgacaWs" target="_blank" class="bx--tile bx--tile--clickable resource-tile">
+                <p class="bx--tile__title">Guia Github & Git</p>
+                <p class="bx--tile__text">Guia escencial para la vida</p>
+                <span class="bx--tag bx--tag--red">Video</span>
+              </a>
+            </div>
+
+            <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+              <a href="https://www.youtube.com/watch?v=jGehuhFhtnE" target="_blank" class="bx--tile bx--tile--clickable resource-tile">
+                <p class="bx--tile__title">Guia de Git</p>
+                <p class="bx--tile__text">Definitvamente ve esto. Lo mando el profe de BDD</p>
+                <span class="bx--tag bx--tag--red">Video</span>
+              </a>
+            </div>
+
+          </div>
+        </div>
       </div>
 
       <div class="materia" id="sem3-mat8">
            <div class="bx--grid">
                <div class="bx--row">
                    <div class="bx--col-lg-12">
-                       <h2 class="bx--type-expressive-heading-03" style="color:#be95ff">Introducción al 3er Semestre</h2>
-                       <p class="bx--type-body-long-01" style="margin-bottom:1rem;">
-                           Este es el semestre donde entramos de lleno a Ciberseguridad. 
-                           Investigar: Inglés, Conceptos de CS, Programación Orientada a Objetos.
-                       </p>
-                       <h4 style="margin-top:2rem;">Recursos Rápidos:</h4>
-                       <ul class="bx--list--unordered">
-                           <li class="bx--list__item">ISO 27001 y NIST CSF (Lectura obligatoria)</li>
-                           <li class="bx--list__item">Virtualización (VMware > VirtualBox en estabilidad)</li>
-                           <li class="bx--list__item">Sistemas Operativos: Debian/Kali/Parrot</li>
-                       </ul>
-                   </div>
+   <h2 class="bx--type-expressive-heading-03">Introducción a tercer semestre</h2>
+   <p class="bx--tile__text">El tercer semestre, el semestre donde se entra de lleno a aspectos de ciberseguridad, es el semestre que desde el primer día se espera con ansias.
+     algunas personas llegan a este semestre con conocimientos extensos, otros llegan con conocimientos muy por encima y otros llegan en ceros
+     , esta guía servirá para todas las personas que por mucho o poco conocimiento tengan necesiten una guía para no estar perdidos en el semestre. 
+</p>
+   <br />
+  <h2 class="bx--type-expressive-heading-03">Resumen del semestre</h2>
+  <p class="bx--tile__text">Investigar: <br />
+    Ingles <br />
+    Curso para comprender conceptos básicos de Ciencias Computacionales en dado caso de partir desde cero <br />
+    <br />
+
+<h2 class="bx--type-expressive-heading-03">PROGRAMACIÓN II</h2>
+<p class="bx--tile__text">Fundamentos de Programación Orientada a Objetos.</p>
+<p class="bx--tile__text">Clases y objetos.</p>
+<p class="bx--tile__text">Atributos y métodos.</p>
+<p class="bx--tile__text">Encapsulamiento.</p>
+<p class="bx--tile__text">Herencia.</p>
+<p class="bx--tile__text">Polimorfismo.</p>
+<p class="bx--tile__text">Abstracción.</p>
+<p class="bx--tile__text">Control de acceso (public, private, protected).</p>
+<p class="bx--tile__text">Validación de datos de entrada.</p>
+<p class="bx--tile__text">Introducción a criptografía desde el código.</p>
+<br />
+
+<h2 class="bx--type-expressive-heading-03">HACKING ETICO (FUNDAMENTOS)</h2>
+<p class="bx--tile__text">Introducción a la materia.</p>
+<p class="bx--tile__text">Existen dos posibles escenarios para esta materia; que el maestro enseñe metodologías o que enseñe herramientas específicas, ambas opciones son fiables ya que estas nos brindarán los fundamentos del hacking ético.</p>
+<p class="bx--tile__text">A su vez es importante comprender que esta no es una materia catalogada dentro de ciencia exacta por lo que no esperes ver el uso de herramientas técnicas avanzadas, mucho del hacking radica en aspectos sociales por lo que debemos de entrar a la materia con eso en mente.</p>
+<p class="bx--tile__text">En este semestre también es muy posible que se experimente un entrelazamiento entre materias, a lo que me refiero es que muchas materias comparten temas y es importante conocerlos.</p>
+<p class="bx--tile__text">En el caso de hacking las materias que se entrelazan son: Programación para la creación de scripts automatizaciones y lógica en general.</p>
+<p class="bx--tile__text">Fundamentos de Redes y telecomunicaciones para la comprensión de los ataques de red.</p>
+<p class="bx--tile__text">Gestión de Riesgo y Recuperación de Desastres para la comprensión de la estructura interna de una empresa para la explotación de vulnerabilidades, esto cae sobre el lema “no puedes defender lo que no conoces” por lo que, de igual forma aplica en Hacking “No puedes atacar lo que no conoces”.</p>
+<p class="bx--tile__text">Análisis, Creación y Familiarización de Documentación.</p>
+<br />
+
+<h2 class="bx--type-expressive-heading-03">Aspectos Administrativos</h2>
+<br />
+<h2 class="bx--type-expressive-heading-03">Documentación</h2>
+<p class="bx--tile__text">Un aspecto predominante en esta área (y en muchas otras) es la constante documentación de proyectos, avances y evidencias.</p>
+<p class="bx--tile__text">Por lo que es indispensable apoyarnos de una herramienta de procesamiento de texto (Recomendable usar Google Docs por la facilidad de movimiento entre dispositivos).</p>
+<p class="bx--tile__text">De igual manera acostumbrarnos a estar tomando captura a cualquier hallazgo que hagamos, por más pequeño que sea, necesitamos una ruta trazada de como fué el análisis de vulnerabilidades o pentest en general.</p>
+<br />
+
+<h2 class="bx--type-expressive-heading-03">Aspectos tecnicos</h2>
+<br />
+
+<h2 class="bx--type-expressive-heading-03">Sistemas Operativos</h2>
+<p class="bx--tile__text">Como es común en cada área; en hacking necesitaremos un software específico, sin embargo no será un simple programa de escritorio.</p>
+<p class="bx--tile__text">Necesitaremos un sistema operativo Linux: Se usa Linux en ciberseguridad por su seguridad inherente (permisos granulares, menos malware enfocado en él), flexibilidad y personalización para adaptar el sistema a tareas específicas (hacking ético, forense), la gran cantidad de herramientas de seguridad disponibles (Kali Linux, Metasploit), y porque es la base de la mayoría de los servidores y la infraestructura en la nube, además de ser de código abierto para una auditoría comunitaria constante y ser gratuito.</p>
+<p class="bx--tile__text">Para usar un sistema operativo Linux debemos de entender que linux viene en diferentes “ediciones” denominadas “Flavours” (o sabores en inglés).</p>
+<p class="bx--tile__text">Existen muchos sabores de linux, sin embargo los más populares en ciberseguridad son los siguientes:</p>
+<br />
+<p class="bx--tile__text">Kali: el cual es el que mayormente se usa debido a su variedad de herramientas ya instaladas.</p>
+<p class="bx--tile__text">Parrot: Muy similar a Kali pero con sus ligeras variaciones en estética y estabilidad (siendo más estable que Kali).</p>
+<p class="bx--tile__text">Debian: Kali y Parrot están basados en Debian por lo que ir con esta opción será la más estable debido a que viene “de fabrica” (sin ningun software de ciberseguridad añadido), es la opción más personalizable sin embargo esta versión se aprovecha más si se instala nativa.</p>
+<p class="bx--tile__text">Sistema Operativo Nativo: Algunas personas deciden Particionar su disco y usar una versión de Linux nativamente como sistema operativo principal, esto es buena opción si te quieres familiarizarse con el entorno de GNU/LINUX.</p>
+<p class="bx--tile__text">Sistema Operativo Virtualizado: Esta opción es la mejor en tema de sencillez, solo deberás instalar un software de virtualización (Como recomendación instala VMware, Virtual Box no se utiliza en la industria y es un software bastante inestable).</p>
+<p class="bx--tile__text">Sistema Operativo En Contenedores: Esta también es una opción si gustas meterte al tema de contenedores, solo la menciono para no dejarla de lado, sin embargo nadie de la generación usó esta opción por considerarla algo inestable.</p>
+<br />
+
+<h2 class="bx--type-expressive-heading-03">Resumen (puntos a investigar y recursos)</h2>
+<p class="bx--tile__text">Entender que son los puertos de un dispositivo.</p>
+<p class="bx--tile__text">Identificar que es cada puerto popularmente.</p>
+<p class="bx--tile__text">Realidad y roles que existen en la ciberseguridad (Red team, blue team y purple team).</p>
+<p class="bx--tile__text">La psicología de la manipulación y la ética de trabajar en una empresa.</p>
+<p class="bx--tile__text">Linux y sus sabores.</p>
+<p class="bx--tile__text">Entender cómo trabaja una terminal de linux.</p>
+<p class="bx--tile__text">¿Qué es el HASH?</p>
+<p class="bx--tile__text">Permisos y escalabilidad en linux y sistemas operativos.</p>
+<p class="bx--tile__text">Comandos linux (cd, ls, sudo, etc.).</p>
+<p class="bx--tile__text">Creación de documentación de pentest.</p>
+<p class="bx--tile__text">Instalación de máquinas virtuales.</p>
+<p class="bx--tile__text">Curso de Hacking Gratuito <a href="https://www.netacad.com/es/courses/ethical-hacker?courseLang=en-US"> Proporcionado por cisco </a></p>
+<br />
+                </div>
                </div>
            </div>
       </div>
     </section>
     
     <section id="sem5" class="section">
-        <h2>Referencias para Programadores</h2>
-        <p>Aquí pondremos los Cheatsheets de Git, Linux, C++, Python.</p>
-        <button class="bx--btn bx--btn--primary">Ver Cheatsheet Linux</button>
+        <h3>Material Extra</h3>
+        <p>Cosas extra muy utiles para expandir tus conocimientos sobre la carrera.</p>
+        <br>
+        <button class="bx--btn bx--btn--primary">No tengo funcion</button>
+        <br><br>
+        <div class="bx--grid">
+          <div class="bx--row">
+            <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+              <a href="https://www.youtube.com/watch?v=NoV_pP0Bx_Q" target="_blank" class="bx--tile bx--tile--clickable resource-tile">
+                <p class="bx--tile__title">Bootcamp Ciberseguridad</p>
+                <p class="bx--tile__text">pueden quemarse 1 hora o 2 al día o a la semana (a su ritmo) y con eso van a entender todo lo que vimos en 3ro y más</p>
+                <span class="bx--tag bx--tag--red">Video</span>
+              </a>
+            </div>
+
+            <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+              <a href="https://www.youtube.com/@Hixec/videos" target="_blank" class="bx--tile bx--tile--clickable resource-tile">
+                <p class="bx--tile__title">Canal de YT</p>
+                <p class="bx--tile__text">Si quieren aprender de ciberseguridad este canal es muy bueno</p>
+                <span class="bx--tag bx--tag--purple">Canal de YT</span>
+              </a>
+            </div>
+
+            <div class="bx--col-sm-4 bx--col-md-4 bx--col-lg-4">
+              <a href="https://www.youtube.com/watch?v=4tdSb313Cw8" target="_blank" class="bx--tile bx--tile--clickable resource-tile">
+                <p class="bx--tile__title">Contenedores explicados</p>
+                <p class="bx--tile__text">Explicacion para entender los contenedores</p>
+                <span class="bx--tag bx--tag--red">Video</span>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
     </section>
 
     <footer class="ibm-footer" id="main-footer">

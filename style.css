@@ -121,7 +121,11 @@ a:hover {
     background-color: var(--bg-sidebar);
 }
 .bx--accordion__heading:hover {
-    background-color: #262626;
+    background-color: var(--primary-hover) !important;
+}
+/* Fix: El hover de Carbon usa un pseudo-elemento ::before que tapa el color de fondo */
+.bx--accordion__heading:hover::before {
+    background-color: var(--primary-hover) !important;
 }
 .bx--accordion__title {
     color: var(--text-main);
